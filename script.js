@@ -28,7 +28,6 @@ function initNavbar() {
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');
 
-  // Scroll effect
   function handleScroll() {
     if (window.scrollY > 50) {
       navbar.classList.add('scrolled');
@@ -40,14 +39,12 @@ function initNavbar() {
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
 
-  // Hamburger toggle
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navLinks.classList.toggle('open');
     document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
   });
 
-  // Close menu on link click
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('active');
@@ -56,7 +53,6 @@ function initNavbar() {
     });
   });
 
-  // Close on outside click
   document.addEventListener('click', (e) => {
     if (!navbar.contains(e.target) && navLinks.classList.contains('open')) {
       hamburger.classList.remove('active');
@@ -74,7 +70,6 @@ function initHeroParticles() {
   if (!container) return;
 
   const COUNT = 40;
-  const particles = [];
 
   for (let i = 0; i < COUNT; i++) {
     const p = document.createElement('div');
@@ -97,7 +92,6 @@ function initHeroParticles() {
     `;
 
     container.appendChild(p);
-    particles.push(p);
   }
 }
 
@@ -108,9 +102,8 @@ function initScrollReveal() {
   const reveals = document.querySelectorAll('.reveal');
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Stagger sibling cards
         const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal'));
         const idx = siblings.indexOf(entry.target);
         const delay = (idx % 4) * 80;
@@ -157,8 +150,6 @@ function animateCounter(el) {
   function step(timestamp) {
     const elapsed = timestamp - start;
     const progress = Math.min(elapsed / duration, 1);
-
-    // Ease out quad
     const eased = 1 - Math.pow(1 - progress, 3);
     const current = eased * target;
 
@@ -200,7 +191,7 @@ function initSIPCalculator() {
 
   if (!inputs.amount) return;
 
-  let chartCtx, chartData;
+  let chartCtx;
 
   function formatINR(amount) {
     if (amount >= 10000000) return '₹' + (amount / 10000000).toFixed(2) + 'Cr';
@@ -229,12 +220,11 @@ function initSIPCalculator() {
     updateChart(totalInvested, estimatedReturns);
   }
 
-  // Chart drawing
   function initChart() {
     const canvas = document.getElementById('sipChart');
     if (!canvas) return;
     chartCtx = canvas.getContext('2d');
-    drawChart(1800000, 3200000); // default values
+    drawChart(1800000, 3200000);
   }
 
   function updateChart(invested, returns) {
@@ -254,26 +244,25 @@ function initSIPCalculator() {
 
     chartCtx.clearRect(0, 0, w, h);
 
-    // Draw donut
     const investedAngle = (invested / total) * Math.PI * 2;
     const returnsAngle = (returns / total) * Math.PI * 2;
     const startAngle = -Math.PI / 2;
     const gap = 0.04;
 
-    // Invested arc
+    // Invested arc — azure
     chartCtx.beginPath();
     chartCtx.arc(cx, cy, r, startAngle + gap / 2, startAngle + investedAngle - gap / 2);
     chartCtx.arc(cx, cy, r * 0.55, startAngle + investedAngle - gap / 2, startAngle + gap / 2, true);
     chartCtx.closePath();
-    chartCtx.fillStyle = 'rgba(201, 169, 110, 0.35)';
+    chartCtx.fillStyle = 'rgba(27, 134, 201, 0.45)';
     chartCtx.fill();
 
-    // Returns arc
+    // Returns arc — green
     chartCtx.beginPath();
     chartCtx.arc(cx, cy, r, startAngle + investedAngle + gap / 2, startAngle + investedAngle + returnsAngle - gap / 2);
     chartCtx.arc(cx, cy, r * 0.55, startAngle + investedAngle + returnsAngle - gap / 2, startAngle + investedAngle + gap / 2, true);
     chartCtx.closePath();
-    chartCtx.fillStyle = '#C9A96E';
+    chartCtx.fillStyle = '#48A349';
     chartCtx.fill();
 
     // Center text
@@ -285,27 +274,24 @@ function initSIPCalculator() {
     const totalFmt = total >= 10000000 ? (total / 10000000).toFixed(1) + 'Cr' :
       total >= 100000 ? (total / 100000).toFixed(1) + 'L' : Math.round(total).toLocaleString('en-IN');
 
-    chartCtx.fillStyle = '#C9A96E';
+    chartCtx.fillStyle = '#4FA8DE';
     chartCtx.font = 'bold 22px Cormorant Garamond';
     chartCtx.fillText('₹' + totalFmt, cx, cy + 16);
 
-    // Percentage labels
     const investedPct = Math.round((invested / total) * 100);
     const returnsPct = 100 - investedPct;
 
     chartCtx.fillStyle = 'rgba(255,255,255,0.6)';
     chartCtx.font = '11px DM Sans';
     chartCtx.fillText(`Invested: ${investedPct}%`, cx, cy + h / 2 - 10);
-    chartCtx.fillStyle = '#C9A96E';
+    chartCtx.fillStyle = '#48A349';
     chartCtx.fillText(`Returns: ${returnsPct}%`, cx, cy + h / 2 + 10);
   }
 
-  // Event listeners
   Object.values(inputs).forEach(input => {
     input.addEventListener('input', calculateSIP);
   });
 
-  // Initialize
   initChart();
   calculateSIP();
 }
@@ -325,7 +311,6 @@ function initTestimonialsSlider() {
   let current = 0;
   let autoTimer;
 
-  // Calculate cards per view
   function getCardsPerView() {
     return window.innerWidth <= 640 ? 1 : window.innerWidth <= 960 ? 2 : 3;
   }
@@ -333,7 +318,6 @@ function initTestimonialsSlider() {
   let perView = getCardsPerView();
   const totalSlides = Math.ceil(cards.length / perView);
 
-  // Create dots
   function createDots() {
     dotsContainer.innerHTML = '';
     for (let i = 0; i < totalSlides; i++) {
@@ -350,15 +334,13 @@ function initTestimonialsSlider() {
     const maxIndex = Math.ceil(cards.length / perView) - 1;
     current = Math.max(0, Math.min(index, maxIndex));
 
-    const cardWidth = cards[0].offsetWidth + 24; // gap
+    const cardWidth = cards[0].offsetWidth + 24;
     track.style.transform = `translateX(-${current * perView * cardWidth}px)`;
 
-    // Update dots
     dotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
       dot.classList.toggle('active', i === current);
     });
 
-    // Reset auto
     clearInterval(autoTimer);
     startAuto();
   }
@@ -373,7 +355,6 @@ function initTestimonialsSlider() {
   prevBtn.addEventListener('click', prev);
   nextBtn.addEventListener('click', next);
 
-  // Touch/swipe support
   let touchStartX = 0;
   track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
   track.addEventListener('touchend', e => {
@@ -401,11 +382,7 @@ function initFAQ() {
     const btn = item.querySelector('.faq-question');
     btn.addEventListener('click', () => {
       const isOpen = item.classList.contains('active');
-
-      // Close all
       items.forEach(i => i.classList.remove('active'));
-
-      // Open clicked if was closed
       if (!isOpen) item.classList.add('active');
     });
   });
@@ -415,13 +392,11 @@ function initFAQ() {
    8. FORMS
 ═══════════════════════════════════════════════════ */
 function initForms() {
-  // Contact form
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', handleContactSubmit);
   }
 
-  // Newsletter form
   const newsletterForm = document.getElementById('newsletterForm');
   if (newsletterForm) {
     newsletterForm.addEventListener('submit', handleNewsletterSubmit);
@@ -434,11 +409,9 @@ function handleContactSubmit(e) {
   const btn = e.target.querySelector('button[type="submit"]');
   const originalContent = btn.innerHTML;
 
-  // Loading state
   btn.innerHTML = '<span>Sending...</span>';
   btn.disabled = true;
 
-  // Simulate submission (replace with real backend/EmailJS/Formspree)
   setTimeout(() => {
     btn.innerHTML = '<span>✓ Message Sent!</span>';
     showToast('Thank you! We will contact you within 24 hours.');
@@ -553,10 +526,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ═══════════════════════════════════════════════════
-   13. PERFORMANCE — Preload fonts + lazy iframes
+   13. PERFORMANCE — Lazy iframes
 ═══════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
-  // Lazy load Google Maps iframe
   const mapContainer = document.querySelector('.map-container');
   if (mapContainer) {
     const observer = new IntersectionObserver((entries) => {
