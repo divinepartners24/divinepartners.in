@@ -60,6 +60,7 @@
   --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 
   --nav-h: 80px;
+  --compliance-h: 34px;
 }
 
 /* ─── RESET & BASE ─── */
@@ -241,11 +242,44 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 500; }
 }
 
 /* ═══════════════════════════════════════════════════════
+   MANDATORY COMPLIANCE BAR
+═══════════════════════════════════════════════════════ */
+.compliance-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  background: var(--navy);
+  border-bottom: 1px solid rgba(27,134,201,0.25);
+  padding: 7px 0;
+}
+
+.compliance-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.75);
+  text-align: center;
+}
+
+.compliance-divider {
+  color: var(--green);
+  opacity: 0.6;
+}
+
+/* ═══════════════════════════════════════════════════════
    NAVIGATION
 ═══════════════════════════════════════════════════════ */
 .navbar {
   position: fixed;
-  top: 0;
+  top: var(--compliance-h, 32px);
   left: 0;
   right: 0;
   z-index: 1000;
@@ -290,15 +324,16 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 500; }
 
 .logo-mark {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--white);
-  border-radius: 8px;
-  padding: 4px;
+  border-radius: 10px;
+  padding: 5px;
   animation: float 6s ease-in-out infinite;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
 
 .logo-mark img {
@@ -311,21 +346,32 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 500; }
 
 .logo-main {
   font-family: var(--font-serif);
-  font-size: 1.3rem;
+  font-size: 1.45rem;
   font-weight: 500;
   color: var(--white);
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: 0.02em;
 }
 
 .logo-sub {
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   font-weight: 400;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold-light);
   opacity: 0.9;
+}
+
+.logo-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  opacity: 0.95;
+  margin-top: 1px;
 }
 
 .nav-links {
@@ -519,7 +565,7 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 500; }
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
-  padding-top: var(--nav-h);
+  padding-top: calc(var(--nav-h) + var(--compliance-h));
 }
 
 .hero-badge {
@@ -551,6 +597,16 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 500; }
   0% { box-shadow: 0 0 0 0 rgba(72,163,73,0.5); }
   70% { box-shadow: 0 0 0 8px rgba(72,163,73,0); }
   100% { box-shadow: 0 0 0 0 rgba(72,163,73,0); }
+}
+
+.hero-kicker {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 18px;
 }
 
 .hero-title {
@@ -822,8 +878,21 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 500; }
 ═══════════════════════════════════════════════════════ */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+}
+
+.services-disclaimer {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .service-card {
@@ -1122,6 +1191,14 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 500; }
   color: rgba(255,255,255,0.5);
 }
 
+.chart-footnote {
+  text-align: center;
+  font-size: 0.68rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.32);
+  margin-top: 4px;
+}
+
 /* ═══════════════════════════════════════════════════════
    SIP CALCULATOR
 ═══════════════════════════════════════════════════════ */
@@ -1232,6 +1309,14 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 500; }
 .calc-result-item--total {
   border-bottom: none;
   padding-top: 16px;
+}
+
+.calc-disclaimer {
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.35);
+  text-align: center;
+  margin-top: 14px;
 }
 
 .calc-chart-area {
@@ -1985,11 +2070,11 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 500; }
 }
 
 @media (max-width: 960px) {
-  :root { --nav-h: 72px; }
+  :root { --nav-h: 72px; --compliance-h: 44px; }
 
   .nav-links {
     position: fixed;
-    top: var(--nav-h);
+    top: calc(var(--nav-h) + var(--compliance-h));
     left: 0;
     right: 0;
     background: var(--navy);
@@ -2002,7 +2087,7 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 500; }
     transition: var(--transition);
     pointer-events: none;
     overflow-y: auto;
-    max-height: calc(100vh - var(--nav-h));
+    max-height: calc(100vh - var(--nav-h) - var(--compliance-h));
     align-items: stretch;
   }
 
