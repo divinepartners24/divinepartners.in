@@ -466,7 +466,8 @@ function initSmoothScroll() {
 
       e.preventDefault();
       const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'));
-      const offset = target.getBoundingClientRect().top + window.scrollY - navH - 20;
+      const complianceH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--compliance-h')) || 0;
+      const offset = target.getBoundingClientRect().top + window.scrollY - navH - complianceH - 20;
 
       window.scrollTo({ top: offset, behavior: 'smooth' });
     });
