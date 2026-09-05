@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disclaimer | Divine Partners</title>
+  <meta name="description" content="Disclaimer for Divine Partners, an AMFI-Registered Mutual Fund Distributor (ARN-115122). Information is for general purposes only and does not constitute investment advice." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="legal-pages.css" />
+</head>
+<body>
+
+  <!-- Compliance Bar -->
+  <div class="compliance-bar">
+    <div class="container compliance-bar-inner">
+      <span>AMFI-registered Mutual Fund Distributor</span>
+      <span class="compliance-divider">|</span>
+      <span>ARN-115122</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="Divine Partners Logo" class="nav-logo-img" />
+        <div class="logo-text">
+          <span class="logo-main">Divine Partners</span>
+          <span class="logo-sub">Mutual Fund Distributor</span>
+          <span class="logo-tagline">Financially Prudent</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#sip-calculator" class="nav-link">SIP Calculator</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="index.html#contact" class="nav-cta">Get Started</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <main class="legal-page">
+    <div class="legal-container">
+
+      <p class="legal-breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        Disclaimer
+      </p>
+
+      <div class="legal-tag">Legal</div>
+      <h1 class="legal-title">Disclaimer</h1>
+      <p class="legal-updated">Last updated: July 2025</p>
+
+      <div class="legal-body">
+
+        <p>Divine Partners is an AMFI-registered Mutual Fund Distributor (ARN-115122). By accessing or using this website, you agree to the terms set out below.</p>
+
+        <h2>General information only</h2>
+        <p>All content on this website — including articles, calculators, illustrations and other material — is provided for <strong>general information and educational purposes only</strong>. It does not constitute investment advice, a recommendation, an offer, or a solicitation to buy or sell any mutual fund scheme or other financial product, and it does not take into account the specific objectives, financial situation or needs of any particular person.</p>
+        <p>We are <strong>not registered with SEBI as an Investment Adviser</strong>. Any assistance we provide is incidental to our activity as a mutual fund distributor. You should evaluate your own circumstances and, where appropriate, consult a SEBI-registered Investment Adviser or a qualified tax or legal professional before making any investment decision.</p>
+
+        <h2>Market risk and no assured returns</h2>
+        <div class="legal-highlight">
+          Mutual Fund investments are subject to market risks. Please read all scheme related documents carefully before investing.
+        </div>
+        <p>We do not indicate, assure or guarantee any return, yield or portfolio outcome for any scheme or transaction. Past performance is not indicative of, and does not guarantee, future results. The value of investments can go down as well as up, and you may get back less than you invested, including a loss of capital.</p>
+        <p>We draw your attention to the disclosures made in the SID, SAI and KIM relating to general risks of investing in mutual fund schemes, as well as scheme-specific risks — including market volatility, force majeure events, changes in the political and economic environment, default by issuers, potential segregation of portfolio, suspension of redemption in a liquidity crisis, risks associated with new fund offerings, and the winding up of schemes.</p>
+
+        <h2>Calculators and illustrations</h2>
+        <p>The SIP calculator on this website is a mathematical tool provided purely for illustration. It works on the assumptions and rates of return that <em>you</em> enter. Its outputs are hypothetical, are not projections, forecasts or promises of any actual return, and should not be relied upon as the basis of any investment decision. Actual results will differ.</p>
+
+        <h2>Accuracy of information</h2>
+        <p>We take reasonable care to keep the information on this website accurate and current, but we make no warranty, express or implied, as to its accuracy, completeness, reliability or timeliness. Information may be changed or updated at any time without notice. Scheme-related information should always be verified against the official documents issued by the respective Asset Management Company.</p>
+
+        <h2>Third-party links</h2>
+        <p>This website may contain links to third-party websites, including those of regulators, AMFI and Asset Management Companies. Such links are provided for convenience only. We do not control and are not responsible for the content, accuracy or privacy practices of any third-party website, and a link does not imply endorsement.</p>
+
+        <h2>Limitation of liability</h2>
+        <p>To the extent permitted by law, Divine Partners, its directors, partners, employees and representatives accept no liability for any direct, indirect, incidental or consequential loss or damage arising from the use of, or reliance on, this website or its content, or from any investment decision taken on that basis.</p>
+
+        <h2>Jurisdiction</h2>
+        <p>This website is intended for use by residents of India. It is not directed at any person in any jurisdiction where such use would be contrary to local law or regulation. These terms are governed by the laws of India, and the courts at Mumbai, Maharashtra shall have exclusive jurisdiction.</p>
+
+        <h2>Contact</h2>
+        <div class="legal-contact-box">
+          <div>
+            <h3>Questions about this disclaimer?</h3>
+          </div>
+          <div class="legal-contact-item">
+            <span>Email</span>
+            <a href="mailto:info@divinepartners.in">info@divinepartners.in</a>
+          </div>
+          <div class="legal-contact-item">
+            <span>Phone</span>
+            <a href="tel:+919999999999">+91 99999 99999</a>
+          </div>
+          <div class="legal-contact-item">
+            <span>Address</span>
+            <a href="index.html#contact">123 Wealth Ave, Mumbai 400001</a>
+          </div>
+        </div>
+
+      </div><!-- /legal-body -->
+    </div><!-- /legal-container -->
+  </main>
+
+  <!-- ─── FOOTER (shared) ─── -->
+  <footer class="footer">
+    <div class="footer-regulatory">
+      <div class="container">
+        <div class="footer-reg-links">
+          <a href="https://www.amfiindia.com/uploads/Revised_Codeof_Conductfor_Mutual_Fund_Distributors_April2022_57d91fe1c4.pdf" target="_blank" rel="noopener">Code of Conduct</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="https://www.amfiindia.com/distributor/amfi-circulars" target="_blank" rel="noopener">SEBI Circulars</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="https://www.amfiindia.com/online-center/risk-o-meter" target="_blank" rel="noopener">Risk-o-meter</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="https://www.amfiindia.com/investor-corner/scheme-related-documents" target="_blank" rel="noopener">SID / SAI / KIM</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="https://www.sebi.gov.in" target="_blank" rel="noopener">SEBI</a>
+        </div>
+        <div class="footer-reg-links footer-reg-links--second">
+          <a href="disclosure.html">Brokerage Disclosure</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="disclaimer.html">Disclaimer</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="disclosure.html">Disclosure</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-row">
+          <p class="footer-disclaimer-text">Mutual Fund investments are subject to market risks. Please read all scheme related documents carefully before investing. Divine Partners is an AMFI-Registered Mutual Fund Distributor (ARN-115122) and is NOT a SEBI-Registered Investment Adviser.</p>
+          <div class="footer-arn-badge"><strong>AMFI Registered Mutual Fund Distributor | ARN-115122</strong></div>
+        </div>
+        <div class="footer-arn-dates">
+          <span>Date of initial registration: <strong>15 December 2012</strong></span>
+          <span>Current validity of ARN: <strong>14 December 2027</strong></span>
+        </div>
+        <div class="footer-copyright">
+          <p>© 2025 Divine Partners. All rights reserved. | <em>Financially Prudent</em></p>
+          <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="disclosure.html">Disclosure</a>
+            <a href="sitemap.html">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple hamburger for legal pages
+    document.getElementById('hamburger').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
