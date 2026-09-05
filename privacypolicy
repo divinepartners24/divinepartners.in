@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Divine Partners</title>
+  <meta name="description" content="How Divine Partners collects, uses, stores and protects your personal information, and the choices you have." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="legal-pages.css" />
+</head>
+<body>
+
+  <!-- Compliance Bar -->
+  <div class="compliance-bar">
+    <div class="container compliance-bar-inner">
+      <span>AMFI-registered Mutual Fund Distributor</span>
+      <span class="compliance-divider">|</span>
+      <span>ARN-115122</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="Divine Partners Logo" class="nav-logo-img" />
+        <div class="logo-text">
+          <span class="logo-main">Divine Partners</span>
+          <span class="logo-sub">Mutual Fund Distributor</span>
+          <span class="logo-tagline">Financially Prudent</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#sip-calculator" class="nav-link">SIP Calculator</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="index.html#contact" class="nav-cta">Get Started</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <main class="legal-page">
+    <div class="legal-container">
+
+      <p class="legal-breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        Privacy Policy
+      </p>
+
+      <div class="legal-tag">Legal</div>
+      <h1 class="legal-title">Privacy Policy</h1>
+      <p class="legal-updated">Last updated: July 2025</p>
+
+      <div class="legal-body">
+
+        <p>This policy explains what personal information Divine Partners (ARN-115122) collects through this website, why we collect it, and what we do with it.</p>
+
+        <h2>What we collect</h2>
+        <p><strong>Information you give us.</strong> When you submit the enquiry or contact form on our website, we collect the details you enter: your name, phone number, email address, the service you are interested in, and your message.</p>
+        <p><strong>Information collected automatically.</strong> Along with a form submission we record your IP address, purely as a basic anti-spam and abuse measure. Our web host also keeps standard server logs.</p>
+        <p><strong>What we do not collect.</strong> This website does not run advertising or tracking pixels. Please do not send us sensitive information such as PAN, bank account details, passwords or KYC documents through the website enquiry form or by ordinary email. If such details are needed, we will tell you a secure way to share them.</p>
+
+        <h2>Why we use it</h2>
+        <ul>
+          <li>To respond to your enquiry and contact you about the service you asked about.</li>
+          <li>To maintain a record of enquiries and our correspondence with you.</li>
+          <li>To meet our record-keeping obligations as an AMFI-registered Mutual Fund Distributor, and to comply with applicable law.</li>
+          <li>To detect and prevent spam and misuse of the form.</li>
+        </ul>
+        <p>We do not use your details for unrelated marketing without your consent, and we do not sell, rent or trade your personal information to anyone.</p>
+
+        <h2>Where it goes</h2>
+        <p>An enquiry you submit is stored in our records and is emailed to our team so we can act on it. Access to stored enquiries is restricted to authorised personnel only.</p>
+
+        <h2>Who we share it with</h2>
+        <p>We share personal information only where necessary, and only in these situations:</p>
+        <ul>
+          <li><strong>Service providers</strong> who operate our infrastructure — our web hosting and email provider — strictly for the purpose of running this website and delivering our correspondence.</li>
+          <li><strong>Asset Management Companies, RTAs and KRAs</strong>, where you proceed with a transaction and your information must be passed on to process it.</li>
+          <li><strong>Regulators and authorities</strong> — including SEBI, AMFI and any competent authority or court — where required under applicable law, a legal filing, or an investigation or proceeding.</li>
+        </ul>
+        <p>We do not share your data with group companies for cross-marketing.</p>
+
+        <h2>Third-party services on this website</h2>
+        <p>Third-party services that load as part of the site may receive your IP address as a normal consequence of your browser fetching content from them:</p>
+        <ul>
+          <li><strong>Google Fonts</strong> — typefaces are served from Google's servers on every page.</li>
+          <li><strong>Google Maps</strong> — the map embedded on the Contact section is served by Google and may set its own cookies.</li>
+          <li><strong>WhatsApp</strong> — the floating chat button links to WhatsApp; if you use that link, your interaction is governed by WhatsApp's terms and privacy policy.</li>
+        </ul>
+        <p>These services are governed by Google's and WhatsApp's own privacy policies, not ours.</p>
+
+        <h2>How long we keep it</h2>
+        <p>We retain enquiry records for as long as needed for the purpose they were collected, and thereafter for as long as required to meet our record-keeping and legal obligations. When information is no longer required, it is deleted.</p>
+
+        <h2>How we protect it</h2>
+        <p>We use reasonable technical and organisational measures to protect your information, including restricted access and safeguards against common web vulnerabilities. No method of transmission or storage over the internet is completely secure, however, and we cannot guarantee absolute security.</p>
+
+        <h2>Your choices</h2>
+        <p>You may ask us to give you a copy of the information we hold about you, to correct it if it is inaccurate, or to delete it where we are not required to retain it. You may also ask us to stop contacting you. Write to <a href="mailto:info@divinepartners.in">info@divinepartners.in</a> and we will action your request within a reasonable period.</p>
+
+        <h2>Children</h2>
+        <p>This website is not directed at children, and we do not knowingly collect personal information from anyone under 18 through it.</p>
+
+        <h2>Changes to this policy</h2>
+        <p>We may update this policy from time to time. The revised version will be posted on this page with a new "last updated" date.</p>
+
+        <h2>Contact</h2>
+        <div class="legal-contact-box">
+          <div>
+            <h3>Questions or data requests?</h3>
+          </div>
+          <div class="legal-contact-item">
+            <span>Email</span>
+            <a href="mailto:info@divinepartners.in">info@divinepartners.in</a>
+          </div>
+          <div class="legal-contact-item">
+            <span>Phone</span>
+            <a href="tel:+919999999999">+91 99999 99999</a>
+          </div>
+          <div class="legal-contact-item">
+            <span>Address</span>
+            <a href="index.html#contact">123 Wealth Ave, Mumbai 400001</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-regulatory">
+      <div class="container">
+        <div class="footer-reg-links">
+          <a href="https://www.amfiindia.com/uploads/Revised_Codeof_Conductfor_Mutual_Fund_Distributors_April2022_57d91fe1c4.pdf" target="_blank" rel="noopener">Code of Conduct</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="https://www.amfiindia.com/distributor/amfi-circulars" target="_blank" rel="noopener">SEBI Circulars</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="https://www.amfiindia.com/online-center/risk-o-meter" target="_blank" rel="noopener">Risk-o-meter</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="https://www.amfiindia.com/investor-corner/scheme-related-documents" target="_blank" rel="noopener">SID / SAI / KIM</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="https://www.sebi.gov.in" target="_blank" rel="noopener">SEBI</a>
+        </div>
+        <div class="footer-reg-links footer-reg-links--second">
+          <a href="disclosure.html">Brokerage Disclosure</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="disclaimer.html">Disclaimer</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="disclosure.html">Disclosure</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-row">
+          <p class="footer-disclaimer-text">Mutual Fund investments are subject to market risks. Please read all scheme related documents carefully before investing. Divine Partners is an AMFI-Registered Mutual Fund Distributor (ARN-115122) and is NOT a SEBI-Registered Investment Adviser.</p>
+          <div class="footer-arn-badge"><strong>AMFI Registered Mutual Fund Distributor | ARN-115122</strong></div>
+        </div>
+        <div class="footer-arn-dates">
+          <span>Date of initial registration: <strong>15 December 2012</strong></span>
+          <span>Current validity of ARN: <strong>14 December 2027</strong></span>
+        </div>
+        <div class="footer-copyright">
+          <p>© 2025 Divine Partners. All rights reserved. | <em>Financially Prudent</em></p>
+          <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="disclosure.html">Disclosure</a>
+            <a href="sitemap.html">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
