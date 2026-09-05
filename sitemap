@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sitemap | Divine Partners</title>
+  <meta name="description" content="Sitemap for Divine Partners — an index of all pages on the website." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="legal-pages.css" />
+</head>
+<body>
+
+  <!-- Compliance Bar -->
+  <div class="compliance-bar">
+    <div class="container compliance-bar-inner">
+      <span>AMFI-registered Mutual Fund Distributor</span>
+      <span class="compliance-divider">|</span>
+      <span>ARN-115122</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="Divine Partners Logo" class="nav-logo-img" />
+        <div class="logo-text">
+          <span class="logo-main">Divine Partners</span>
+          <span class="logo-sub">Mutual Fund Distributor</span>
+          <span class="logo-tagline">Financially Prudent</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#sip-calculator" class="nav-link">SIP Calculator</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="index.html#contact" class="nav-cta">Get Started</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <main class="legal-page">
+    <div class="legal-container">
+
+      <p class="legal-breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        Sitemap
+      </p>
+
+      <div class="legal-tag">Navigation</div>
+      <h1 class="legal-title">Sitemap</h1>
+      <p class="legal-updated">An index of all pages on the Divine Partners website.</p>
+
+      <div class="legal-body">
+
+        <div class="sitemap-grid">
+
+          <!-- Main Pages -->
+          <div class="sitemap-section">
+            <h3>Main Pages</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#why">Why Choose Us</a></li>
+              <li><a href="index.html#philosophy">Investment Principles</a></li>
+              <li><a href="index.html#testimonials">Client Testimonials</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+              <li><a href="index.html#contact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="sitemap-section">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="index.html#mutual-funds">Mutual Fund Distribution</a></li>
+              <li><a href="index.html#insurance">Insurance Distribution</a></li>
+              <li><a href="index.html#sip-services">SIP Setup &amp; Support</a></li>
+              <li><a href="index.html#nri-services">NRI Mutual Fund Services</a></li>
+              <li><a href="index.html#sip-calculator">SIP Returns Calculator</a></li>
+            </ul>
+          </div>
+
+          <!-- Legal & Compliance -->
+          <div class="sitemap-section">
+            <h3>Legal &amp; Compliance</h3>
+            <ul>
+              <li><a href="disclaimer.html">Disclaimer</a></li>
+              <li><a href="disclosure.html">Disclosure</a></li>
+              <li><a href="disclosure.html">Brokerage Disclosure</a></li>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+          </div>
+
+          <!-- Regulatory Resources -->
+          <div class="sitemap-section">
+            <h3>Regulatory Resources</h3>
+            <ul>
+              <li><a href="https://www.amfiindia.com/uploads/Revised_Codeof_Conductfor_Mutual_Fund_Distributors_April2022_57d91fe1c4.pdf" target="_blank" rel="noopener">AMFI Code of Conduct ↗</a></li>
+              <li><a href="https://www.amfiindia.com/distributor/amfi-circulars" target="_blank" rel="noopener">SEBI Circulars ↗</a></li>
+              <li><a href="https://www.amfiindia.com/online-center/risk-o-meter" target="_blank" rel="noopener">AMFI Risk-o-meter ↗</a></li>
+              <li><a href="https://www.amfiindia.com/investor-corner/scheme-related-documents" target="_blank" rel="noopener">SID / SAI / KIM ↗</a></li>
+              <li><a href="https://www.sebi.gov.in" target="_blank" rel="noopener">SEBI Website ↗</a></li>
+              <li><a href="https://scores.sebi.gov.in/" target="_blank" rel="noopener">SEBI SCORES ↗</a></li>
+              <li><a href="https://www.amfiindia.com" target="_blank" rel="noopener">AMFI India ↗</a></li>
+            </ul>
+          </div>
+
+        </div><!-- /sitemap-grid -->
+
+        <div class="legal-highlight" style="margin-top: 40px;">
+          <strong>Divine Partners</strong> is an AMFI-Registered Mutual Fund Distributor (ARN-115122). We do not provide investment advice or portfolio management services. Mutual Fund investments are subject to market risks. Please read all scheme related documents carefully before investing.
+        </div>
+
+      </div><!-- /legal-body -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-regulatory">
+      <div class="container">
+        <div class="footer-reg-links">
+          <a href="https://www.amfiindia.com/uploads/Revised_Codeof_Conductfor_Mutual_Fund_Distributors_April2022_57d91fe1c4.pdf" target="_blank" rel="noopener">Code of Conduct</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="https://www.amfiindia.com/distributor/amfi-circulars" target="_blank" rel="noopener">SEBI Circulars</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="https://www.amfiindia.com/online-center/risk-o-meter" target="_blank" rel="noopener">Risk-o-meter</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="https://www.amfiindia.com/investor-corner/scheme-related-documents" target="_blank" rel="noopener">SID / SAI / KIM</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="https://www.sebi.gov.in" target="_blank" rel="noopener">SEBI</a>
+        </div>
+        <div class="footer-reg-links footer-reg-links--second">
+          <a href="disclosure.html">Brokerage Disclosure</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="disclaimer.html">Disclaimer</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="disclosure.html">Disclosure</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-row">
+          <p class="footer-disclaimer-text">Mutual Fund investments are subject to market risks. Please read all scheme related documents carefully before investing. Divine Partners is an AMFI-Registered Mutual Fund Distributor (ARN-115122) and is NOT a SEBI-Registered Investment Adviser.</p>
+          <div class="footer-arn-badge"><strong>AMFI Registered Mutual Fund Distributor | ARN-115122</strong></div>
+        </div>
+        <div class="footer-arn-dates">
+          <span>Date of initial registration: <strong>15 December 2012</strong></span>
+          <span>Current validity of ARN: <strong>14 December 2027</strong></span>
+        </div>
+        <div class="footer-copyright">
+          <p>© 2025 Divine Partners. All rights reserved. | <em>Financially Prudent</em></p>
+          <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="disclosure.html">Disclosure</a>
+            <a href="sitemap.html">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
