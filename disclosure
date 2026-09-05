@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disclosure | Divine Partners</title>
+  <meta name="description" content="Statutory disclosure by Divine Partners (ARN-115122) — registration details, our role as a distributor, remuneration, and conflict of interest disclosures." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="legal-pages.css" />
+</head>
+<body>
+
+  <!-- Compliance Bar -->
+  <div class="compliance-bar">
+    <div class="container compliance-bar-inner">
+      <span>AMFI-registered Mutual Fund Distributor</span>
+      <span class="compliance-divider">|</span>
+      <span>ARN-115122</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="Divine Partners Logo" class="nav-logo-img" />
+        <div class="logo-text">
+          <span class="logo-main">Divine Partners</span>
+          <span class="logo-sub">Mutual Fund Distributor</span>
+          <span class="logo-tagline">Financially Prudent</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#sip-calculator" class="nav-link">SIP Calculator</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="index.html#contact" class="nav-cta">Get Started</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <main class="legal-page">
+    <div class="legal-container">
+
+      <p class="legal-breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        Disclosure
+      </p>
+
+      <div class="legal-tag">Legal</div>
+      <h1 class="legal-title">Disclosure</h1>
+      <p class="legal-updated">Last updated: July 2025</p>
+
+      <div class="legal-body">
+
+        <h2>Registration details</h2>
+        <table class="legal-table">
+          <tr><td>Name</td><td>Divine Partners</td></tr>
+          <tr><td>Status</td><td>AMFI-registered Mutual Fund Distributor</td></tr>
+          <tr><td>ARN</td><td><strong>ARN-115122</strong></td></tr>
+          <tr><td>Date of initial registration</td><td><strong>15 December 2012</strong></td></tr>
+          <tr><td>Current validity of ARN</td><td><strong>14 December 2027</strong></td></tr>
+          <tr><td>Registered address</td><td>123 Wealth Avenue, Financial District, Mumbai – 400001, Maharashtra</td></tr>
+          <tr><td>Contact</td><td><a href="mailto:info@divinepartners.in">info@divinepartners.in</a> · <a href="tel:+919999999999">+91 99999 99999</a></td></tr>
+        </table>
+
+        <h2>Our role</h2>
+        <p>We act <strong>solely as a distributor</strong> of mutual fund schemes. Our activity is limited to marketing, sale and distribution of the mutual fund products we offer, and to providing service and assistance that is incidental to that activity.</p>
+        <p>We are <strong>not</strong> registered with SEBI as an Investment Adviser and we do not provide investment advisory or portfolio management services. Any information or assistance we offer is incidental to distribution and should not be construed as investment advice. For advice, please consult a SEBI-registered Investment Adviser.</p>
+
+        <h2>Regular Plans only</h2>
+        <p>In terms of SEBI's directions, mutual fund distributors cannot deal in Direct Plans. Any transaction executed through us is in the <strong>Regular Plan</strong> of the scheme, which carries a distributor commission built into the scheme's expense ratio.</p>
+        <p>Direct Plans of the same scheme are available to you directly from the Asset Management Company and carry a lower expense ratio because they do not include distributor commission. You are free to invest in Direct Plans without our involvement.</p>
+
+        <h2>How we are remunerated</h2>
+        <p>We receive commission from the Asset Management Companies whose schemes we distribute. We <strong>do not charge you any separate fee</strong> for mutual fund distribution. Commission rates differ between schemes and between AMCs. We will disclose all material information, including commissions received or receivable, for the competing schemes from among which a scheme is presented to you.</p>
+
+        <h2>Conflict of interest</h2>
+        <p>Because commission rates vary across competing schemes, a potential conflict of interest exists. We disclose this openly, and we do not allow financial incentive to form the basis of any scheme or transaction we present to you.</p>
+        <p>Where we are an associate or group company of any AMC, or have any other material association, we will disclose that association and the total commission received or receivable. <em>(Divine Partners is not an associate, group company or sponsor of any Asset Management Company.)</em></p>
+        <p>The information we provide is limited to the mutual fund products we distribute. Other alternative products, which we do not offer, may also be available to you and may be worth considering before you decide.</p>
+
+        <h2>What we will not do</h2>
+        <ul>
+          <li>We will not indicate or assure any return or yield for any scheme or transaction.</li>
+          <li>We will not rebate or pass back commission, or induce investment through gifts or gift vouchers.</li>
+          <li>We will not conceal or omit any material fact or risk factor of a scheme.</li>
+          <li>We will not make any misrepresentation or exaggerated statement about any scheme, AMC or other distributor.</li>
+          <li>We will not use the name, logo or mark of any AMC without that AMC's prior written approval.</li>
+        </ul>
+
+        <h2>Products other than mutual funds</h2>
+        <p>Where we facilitate any product other than mutual funds (such as insurance), that product is governed by its own regulator, terms and disclosures. Such products are not mutual funds, and mutual fund disclosures do not apply to them. We will disclose our role and remuneration for those products separately.</p>
+
+        <h2>Grievance redressal</h2>
+        <p>If you have a complaint arising out of our marketing, sale or distribution activity, please write to <a href="mailto:info@divinepartners.in">info@divinepartners.in</a> or call <a href="tel:+919999999999">+91 99999 99999</a>. We endeavour to resolve grievances promptly.</p>
+        <p>If your complaint relates to a mutual fund scheme and is not resolved to your satisfaction, you may approach the concerned Asset Management Company, or lodge a complaint on SEBI's <a href="https://scores.sebi.gov.in/" target="_blank" rel="noopener">SCORES</a> platform. You may also refer to <a href="https://www.amfiindia.com/" target="_blank" rel="noopener">AMFI</a> for distributor-related matters.</p>
+
+        <h2>Reference documents</h2>
+        <ul>
+          <li><a href="https://www.amfiindia.com/uploads/Revised_Codeof_Conductfor_Mutual_Fund_Distributors_April2022_57d91fe1c4.pdf" target="_blank" rel="noopener">AMFI Code of Conduct for Mutual Fund Distributors</a></li>
+          <li><a href="https://www.amfiindia.com/distributor/amfi-circulars" target="_blank" rel="noopener">SEBI Circulars</a></li>
+          <li><a href="https://www.amfiindia.com/online-center/risk-o-meter" target="_blank" rel="noopener">AMFI Risk-o-meter</a></li>
+          <li><a href="https://www.amfiindia.com/investor-corner/scheme-related-documents" target="_blank" rel="noopener">Scheme offer documents (SID / SAI / KIM)</a></li>
+        </ul>
+
+        <div class="legal-contact-box">
+          <div>
+            <h3>Questions about this disclosure?</h3>
+          </div>
+          <div class="legal-contact-item">
+            <span>Email</span>
+            <a href="mailto:info@divinepartners.in">info@divinepartners.in</a>
+          </div>
+          <div class="legal-contact-item">
+            <span>Phone</span>
+            <a href="tel:+919999999999">+91 99999 99999</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-regulatory">
+      <div class="container">
+        <div class="footer-reg-links">
+          <a href="https://www.amfiindia.com/uploads/Revised_Codeof_Conductfor_Mutual_Fund_Distributors_April2022_57d91fe1c4.pdf" target="_blank" rel="noopener">Code of Conduct</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="https://www.amfiindia.com/distributor/amfi-circulars" target="_blank" rel="noopener">SEBI Circulars</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="https://www.amfiindia.com/online-center/risk-o-meter" target="_blank" rel="noopener">Risk-o-meter</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="https://www.amfiindia.com/investor-corner/scheme-related-documents" target="_blank" rel="noopener">SID / SAI / KIM</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="https://www.sebi.gov.in" target="_blank" rel="noopener">SEBI</a>
+        </div>
+        <div class="footer-reg-links footer-reg-links--second">
+          <a href="disclosure.html">Brokerage Disclosure</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="disclaimer.html">Disclaimer</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="disclosure.html">Disclosure</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-row">
+          <p class="footer-disclaimer-text">Mutual Fund investments are subject to market risks. Please read all scheme related documents carefully before investing. Divine Partners is an AMFI-Registered Mutual Fund Distributor (ARN-115122) and is NOT a SEBI-Registered Investment Adviser.</p>
+          <div class="footer-arn-badge"><strong>AMFI Registered Mutual Fund Distributor | ARN-115122</strong></div>
+        </div>
+        <div class="footer-arn-dates">
+          <span>Date of initial registration: <strong>15 December 2012</strong></span>
+          <span>Current validity of ARN: <strong>14 December 2027</strong></span>
+        </div>
+        <div class="footer-copyright">
+          <p>© 2025 Divine Partners. All rights reserved. | <em>Financially Prudent</em></p>
+          <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="disclosure.html">Disclosure</a>
+            <a href="sitemap.html">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
