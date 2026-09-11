@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team | Divine Partners</title>
+  <meta name="description" content="Meet the team behind Divine Partners — experienced mutual fund distribution professionals." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="legal-combined.css" />
+  <style>
+    /* ── Team Page Specific Styles ── */
+    .team-page {
+      min-height: 100vh;
+      background: var(--cream);
+      padding-top: calc(var(--nav-h) + var(--compliance-h) + 60px);
+      padding-bottom: 80px;
+    }
+    .team-container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .team-header { text-align: center; margin-bottom: 64px; }
+    .team-header .section-tag { justify-content: center; }
+    .team-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .team-subtitle { font-size: 1rem; color: var(--text-light); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    /* Leader cards — bigger, 2-col */
+    .team-leaders {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+    .team-members {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .team-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--cream-dark);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .team-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .team-card-photo {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .team-leaders .team-card-photo { aspect-ratio: 4/3; }
+    .team-card-initials {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.05em;
+    }
+    .team-leaders .team-card-initials { font-size: 4rem; }
+    .team-card-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--green);
+      color: var(--white);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+    .team-card-accent {
+      height: 3px;
+      background: linear-gradient(90deg, var(--azure), var(--green));
+    }
+    .team-card-body { padding: 24px; }
+    .team-leaders .team-card-body { padding: 28px 32px; }
+    .team-card-name {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .team-leaders .team-card-name { font-size: 1.5rem; }
+    .team-card-role {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--azure);
+      margin-bottom: 12px;
+    }
+    .team-card-bio {
+      font-size: 0.875rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .team-card-qualifications {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .qual-tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: rgba(27,134,201,0.08);
+      color: var(--azure);
+      border: 1px solid rgba(27,134,201,0.2);
+    }
+    .team-card-quote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      border-left: 2px solid var(--green);
+      padding-left: 14px;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .team-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--cream-dark);
+    }
+    .team-card-contact { font-size: 0.78rem; color: var(--text-light); }
+    .team-card-contact a { color: var(--azure); }
+    .team-linkedin {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--azure);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .team-linkedin:hover { color: var(--green); }
+    .team-linkedin svg { width: 16px; height: 16px; }
+
+    .section-divider {
+      text-align: center;
+      margin: 48px 0 32px;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .section-divider::before, .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--cream-dark);
+    }
+
+    @media (max-width: 960px) {
+      .team-leaders { grid-template-columns: 1fr; }
+      .team-members { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .team-members { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Compliance Bar -->
+  <div class="compliance-bar">
+    <div class="container compliance-bar-inner">
+      <span>AMFI-registered Mutual Fund Distributor</span>
+      <span class="compliance-divider">|</span>
+      <span>ARN-115122</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Divine Partners Logo" class="nav-logo-img" />
+        <div class="logo-text">
+          <span class="logo-sub">Mutual Fund Distributor</span>
+          <span class="logo-tagline">Financially Prudent</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="investor-corner.html" class="nav-link">Investor Corner</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="index.html#contact" class="nav-cta">Get Started</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="team-page">
+    <div class="team-container">
+
+      <!-- Header -->
+      <div class="team-header">
+        <div class="section-tag" style="justify-content:center">The People Behind Divine Partners</div>
+        <h1 class="team-title">Meet Our Team</h1>
+        <p class="team-subtitle">A team of certified professionals dedicated to helping you navigate mutual fund investments with clarity and confidence.</p>
+      </div>
+
+      <!-- Leadership -->
+      <div class="section-divider">Leadership</div>
+      <div class="team-leaders">
+
+        <!-- Head 1 — REPLACE with real details -->
+        <div class="team-card">
+          <div class="team-card-photo">
+            <div class="team-card-badge">Founder & Head</div>
+            <div class="team-card-initials">[ Name ]</div>
+          </div>
+          <div class="team-card-accent"></div>
+          <div class="team-card-body">
+            <div class="team-card-name">[ Full Name ]</div>
+            <div class="team-card-role">Founder & Managing Partner</div>
+            <div class="team-card-qualifications">
+              <span class="qual-tag">NISM Certified</span>
+              <span class="qual-tag">[ CFP / MBA / etc. ]</span>
+            </div>
+            <p class="team-card-quote">[ Add your personal message or philosophy here — 1–2 lines. ]</p>
+            <p class="team-card-bio">[ Write 2–3 sentences about your background, years of experience, and what drives your approach to client service. ]</p>
+            <div class="team-card-footer">
+              <span class="team-card-contact">[ email@divinepartners.in ]</span>
+              <a href="[ LinkedIn URL ]" target="_blank" rel="noopener" class="team-linkedin">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Head 2 — REPLACE with real details -->
+        <div class="team-card">
+          <div class="team-card-photo">
+            <div class="team-card-badge">Co-Founder</div>
+            <div class="team-card-initials">[ Name ]</div>
+          </div>
+          <div class="team-card-accent"></div>
+          <div class="team-card-body">
+            <div class="team-card-name">[ Full Name ]</div>
+            <div class="team-card-role">Co-Founder & Partner</div>
+            <div class="team-card-qualifications">
+              <span class="qual-tag">NISM Certified</span>
+              <span class="qual-tag">[ CFP / MBA / etc. ]</span>
+            </div>
+            <p class="team-card-quote">[ Add your personal message or philosophy here — 1–2 lines. ]</p>
+            <p class="team-card-bio">[ Write 2–3 sentences about your background, years of experience, and what drives your approach to client service. ]</p>
+            <div class="team-card-footer">
+              <span class="team-card-contact">[ email@divinepartners.in ]</span>
+              <a href="[ LinkedIn URL ]" target="_blank" rel="noopener" class="team-linkedin">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /team-leaders -->
+
+      <!-- Team Members -->
+      <div class="section-divider">Our Team</div>
+      <div class="team-members">
+
+        <!-- Member 1 -->
+        <div class="team-card">
+          <div class="team-card-photo" style="aspect-ratio:1">
+            <div class="team-card-initials" style="font-size:2.5rem">[ Name ]</div>
+          </div>
+          <div class="team-card-accent"></div>
+          <div class="team-card-body">
+            <div class="team-card-name" style="font-size:1.1rem">[ Full Name ]</div>
+            <div class="team-card-role">[ Role / Designation ]</div>
+            <div class="team-card-qualifications">
+              <span class="qual-tag">NISM Certified</span>
+            </div>
+            <p class="team-card-bio" style="font-size:0.82rem">[ 1–2 lines about this person. ]</p>
+            <div class="team-card-footer">
+              <a href="[ LinkedIn URL ]" target="_blank" rel="noopener" class="team-linkedin">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="team-card">
+          <div class="team-card-photo" style="aspect-ratio:1">
+            <div class="team-card-initials" style="font-size:2.5rem">[ Name ]</div>
+          </div>
+          <div class="team-card-accent"></div>
+          <div class="team-card-body">
+            <div class="team-card-name" style="font-size:1.1rem">[ Full Name ]</div>
+            <div class="team-card-role">[ Role / Designation ]</div>
+            <div class="team-card-qualifications">
+              <span class="qual-tag">NISM Certified</span>
+            </div>
+            <p class="team-card-bio" style="font-size:0.82rem">[ 1–2 lines about this person. ]</p>
+            <div class="team-card-footer">
+              <a href="[ LinkedIn URL ]" target="_blank" rel="noopener" class="team-linkedin">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-card">
+          <div class="team-card-photo" style="aspect-ratio:1">
+            <div class="team-card-initials" style="font-size:2.5rem">[ Name ]</div>
+          </div>
+          <div class="team-card-accent"></div>
+          <div class="team-card-body">
+            <div class="team-card-name" style="font-size:1.1rem">[ Full Name ]</div>
+            <div class="team-card-role">[ Role / Designation ]</div>
+            <div class="team-card-qualifications">
+              <span class="qual-tag">NISM Certified</span>
+            </div>
+            <p class="team-card-bio" style="font-size:0.82rem">[ 1–2 lines about this person. ]</p>
+            <div class="team-card-footer">
+              <a href="[ LinkedIn URL ]" target="_blank" rel="noopener" class="team-linkedin">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="team-card">
+          <div class="team-card-photo" style="aspect-ratio:1">
+            <div class="team-card-initials" style="font-size:2.5rem">[ Name ]</div>
+          </div>
+          <div class="team-card-accent"></div>
+          <div class="team-card-body">
+            <div class="team-card-name" style="font-size:1.1rem">[ Full Name ]</div>
+            <div class="team-card-role">[ Role / Designation ]</div>
+            <div class="team-card-qualifications">
+              <span class="qual-tag">NISM Certified</span>
+            </div>
+            <p class="team-card-bio" style="font-size:0.82rem">[ 1–2 lines about this person. ]</p>
+            <div class="team-card-footer">
+              <a href="[ LinkedIn URL ]" target="_blank" rel="noopener" class="team-linkedin">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /team-members -->
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-regulatory">
+      <div class="container">
+        <div class="footer-reg-links">
+          <a href="https://www.amfiindia.com/uploads/Revised_Codeof_Conductfor_Mutual_Fund_Distributors_April2022_57d91fe1c4.pdf" target="_blank" rel="noopener">Code of Conduct</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="disclosure.html">Disclosure</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="disclaimer.html">Disclaimer</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-row">
+          <p class="footer-disclaimer-text">Mutual Fund investments are subject to market risks. Divine Partners is an AMFI-Registered Mutual Fund Distributor (ARN-115122) and is NOT a SEBI-Registered Investment Adviser.</p>
+          <div class="footer-arn-badge"><strong>AMFI Registered Mutual Fund Distributor | ARN-115122</strong></div>
+        </div>
+        <div class="footer-copyright">
+          <p>© 2025 Divine Partners. All rights reserved. | <em>Financially Prudent</em></p>
+          <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="sitemap.html">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
