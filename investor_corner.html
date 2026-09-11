@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investor Corner | Divine Partners</title>
+  <meta name="description" content="Your one-stop investor toolkit — SIP Calculator, Risk Profiler, and Financial Health Check. Tools to help you make informed decisions." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="legal-combined.css" />
+  <style>
+    :root { --font-numeric: 'Times New Roman', Times, serif; }
+
+    .ic-page {
+      min-height: 100vh;
+      background: var(--cream);
+      padding-top: calc(var(--nav-h) + var(--compliance-h) + 48px);
+      padding-bottom: 80px;
+    }
+
+    .ic-container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Hero banner ── */
+    .ic-hero {
+      background: var(--navy);
+      border-radius: 20px;
+      padding: 48px 52px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ic-hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(27,134,201,0.2), transparent 70%);
+    }
+    .ic-hero-tag {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 12px;
+    }
+    .ic-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 400; color: var(--white);
+      margin-bottom: 12px; line-height: 1.2;
+    }
+    .ic-hero-sub { font-size: 0.95rem; color: rgba(255,255,255,0.65); max-width: 520px; line-height: 1.7; }
+    .ic-hero-disclaimer {
+      margin-top: 20px;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.38);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── Tab nav ── */
+    .ic-tabs {
+      display: flex; gap: 8px;
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 12px;
+      padding: 6px;
+      margin-bottom: 36px;
+    }
+    .ic-tab {
+      flex: 1;
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: none;
+      background: transparent;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .ic-tab.active {
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+    .ic-tab:hover:not(.active) { background: var(--cream); color: var(--navy); }
+
+    /* ── Panels ── */
+    .ic-panel { display: none; }
+    .ic-panel.active { display: block; }
+
+    /* ── SIP Calculator (same as homepage but lighter) ── */
+    .ic-calc-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 40px;
+    }
+    .ic-calc-field { margin-bottom: 24px; }
+    .ic-calc-field label {
+      display: block;
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.62); margin-bottom: 10px;
+    }
+    .ic-calc-input-group { display: flex; align-items: center; gap: 14px; }
+    .ic-calc-prefix { color: var(--gold-light); font-family: var(--font-numeric); font-size: 1.1rem; }
+    .ic-calc-input-group input[type="range"] {
+      flex: 1; -webkit-appearance: none; appearance: none;
+      height: 3px; background: rgba(255,255,255,0.15);
+      border-radius: 2px; outline: none;
+    }
+    .ic-calc-input-group input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 16px; height: 16px;
+      background: var(--gold-light); border-radius: 50%; cursor: pointer;
+      box-shadow: 0 0 0 3px rgba(27,134,201,0.3);
+    }
+    .ic-calc-val {
+      font-family: var(--font-numeric); font-size: 1.05rem;
+      color: var(--gold-light); font-weight: 700;
+      min-width: 90px; text-align: right;
+    }
+    .ic-results { border-top: 1px solid rgba(27,134,201,0.25); padding-top: 24px; margin-top: 8px; }
+    .ic-result-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .ic-result-label { font-size: 0.82rem; color: rgba(255,255,255,0.52); }
+    .ic-result-val { font-family: var(--font-numeric); font-size: 1.05rem; color: var(--white); font-weight: 700; }
+    .ic-result-val.green { color: var(--green); }
+    .ic-result-val.gold { font-size: 1.4rem; color: var(--gold-light); }
+    .ic-chart-area { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
+    .ic-legend { display: flex; gap: 20px; }
+    .ic-legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    .ic-legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .ic-calc-disclaimer {
+      font-size: 0.72rem; color: rgba(255,255,255,0.35);
+      text-align: center; margin-top: 14px; line-height: 1.6;
+    }
+
+    /* ── Tool embed card ── */
+    .ic-tool-card {
+      background: var(--white);
+      border-radius: 16px;
+      border: 1px solid var(--cream-dark);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .ic-tool-header {
+      background: var(--navy);
+      padding: 24px 32px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .ic-tool-icon { font-size: 2rem; }
+    .ic-tool-header-text h2 {
+      font-family: var(--font-serif); font-size: 1.4rem;
+      font-weight: 400; color: var(--white); margin-bottom: 4px;
+    }
+    .ic-tool-header-text p { font-size: 0.82rem; color: rgba(255,255,255,0.6); }
+    .ic-tool-body { padding: 40px 32px; }
+
+    .ic-tool-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+    .ic-step {
+      text-align: center;
+      padding: 24px 16px;
+      background: var(--cream);
+      border-radius: 12px;
+      border: 1px solid var(--cream-dark);
+    }
+    .ic-step-num {
+      font-family: var(--font-numeric);
+      font-size: 2rem; font-weight: 700;
+      color: var(--azure); margin-bottom: 8px;
+    }
+    .ic-step-title { font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+    .ic-step-desc { font-size: 0.78rem; color: var(--text-light); line-height: 1.6; }
+
+    .ic-launch-btn {
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      padding: 16px 40px;
+      background: linear-gradient(135deg, var(--azure), var(--green));
+      color: var(--white);
+      border-radius: 8px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: 0 8px 24px rgba(27,134,201,0.3);
+      margin: 0 auto;
+      width: fit-content;
+    }
+    .ic-launch-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(27,134,201,0.4);
+    }
+    .ic-launch-btn svg { width: 20px; height: 20px; }
+
+    .ic-tool-disclaimer {
+      margin-top: 24px;
+      padding: 16px 20px;
+      background: rgba(201,169,110,0.06);
+      border: 1px solid rgba(201,169,110,0.15);
+      border-radius: 8px;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+    .ic-tool-disclaimer strong { color: var(--navy); }
+
+    @media (max-width: 760px) {
+      .ic-calc-wrap { grid-template-columns: 1fr; }
+      .ic-chart-area { display: none; }
+      .ic-tool-steps { grid-template-columns: 1fr; }
+      .ic-tabs { flex-direction: column; }
+      .ic-hero { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Compliance Bar -->
+  <div class="compliance-bar">
+    <div class="container compliance-bar-inner">
+      <span>AMFI-registered Mutual Fund Distributor</span>
+      <span class="compliance-divider">|</span>
+      <span>ARN-115122</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Divine Partners Logo" class="nav-logo-img" />
+        <div class="logo-text">
+          <span class="logo-sub">Mutual Fund Distributor</span>
+          <span class="logo-tagline">Financially Prudent</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="investor-corner.html" class="nav-link active">Investor Corner</a>
+        <a href="pay-premium.html" class="nav-link">Pay Premium</a>
+        <a href="index.html#contact" class="nav-cta">Get Started</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="ic-page">
+    <div class="ic-container">
+
+      <!-- Hero -->
+      <div class="ic-hero">
+        <div class="ic-hero-tag">Tools for Informed Investing</div>
+        <h1 class="ic-hero-title">Investor Corner</h1>
+        <p class="ic-hero-sub">Self-service tools to help you explore SIP projections, understand your risk appetite, and check your financial fitness — all in one place.</p>
+        <p class="ic-hero-disclaimer">⚠ All tools on this page are for self-assessment and illustration only. They do not constitute investment advice. Divine Partners is a Mutual Fund Distributor (ARN-115122), not a SEBI-Registered Investment Adviser. Please consult a qualified professional for personalised advice.</p>
+      </div>
+
+      <!-- Tab navigation -->
+      <div class="ic-tabs" role="tablist">
+        <button class="ic-tab active" onclick="switchTab('sip', this)" id="sip" role="tab" aria-selected="true">
+          📊 SIP Calculator
+        </button>
+        <button class="ic-tab" onclick="switchTab('risk', this)" id="risk" role="tab" aria-selected="false">
+          🎯 Risk Profiler
+        </button>
+        <button class="ic-tab" onclick="switchTab('health', this)" id="health" role="tab" aria-selected="false">
+          💚 Financial Health Check
+        </button>
+      </div>
+
+      <!-- ════ PANEL 1: SIP Calculator ════ -->
+      <div class="ic-panel active" id="panel-sip">
+        <div class="ic-calc-wrap">
+          <div>
+            <div class="ic-calc-field">
+              <label>Monthly SIP Amount</label>
+              <div class="ic-calc-input-group">
+                <span class="ic-calc-prefix">₹</span>
+                <input type="range" id="ic-sipAmount" min="500" max="100000" value="10000" step="500" />
+                <span class="ic-calc-val" id="ic-sipAmountVal">₹10,000</span>
+              </div>
+            </div>
+            <div class="ic-calc-field">
+              <label>Expected Annual Returns</label>
+              <div class="ic-calc-input-group">
+                <input type="range" id="ic-sipReturn" min="5" max="30" value="12" step="0.5" />
+                <span class="ic-calc-val" id="ic-sipReturnVal">12%</span>
+              </div>
+            </div>
+            <div class="ic-calc-field">
+              <label>Investment Duration</label>
+              <div class="ic-calc-input-group">
+                <input type="range" id="ic-sipDuration" min="1" max="40" value="15" step="1" />
+                <span class="ic-calc-val" id="ic-sipDurationVal">15 Years</span>
+              </div>
+            </div>
+            <div class="ic-results">
+              <div class="ic-result-row">
+                <span class="ic-result-label">Total Invested</span>
+                <span class="ic-result-val" id="ic-totalInvested">₹18,00,000</span>
+              </div>
+              <div class="ic-result-row">
+                <span class="ic-result-label">Hypothetical Returns</span>
+                <span class="ic-result-val green" id="ic-estReturns">₹32,00,000</span>
+              </div>
+              <div class="ic-result-row" style="border-bottom:none; padding-top:14px;">
+                <span class="ic-result-label" style="font-weight:600;color:rgba(255,255,255,0.8)">Hypothetical Total Value</span>
+                <span class="ic-result-val gold" id="ic-totalWealth">₹50,00,000</span>
+              </div>
+            </div>
+            <p class="ic-calc-disclaimer">Illustration only. Assumes constant return. Not a guarantee. Mutual Fund investments are subject to market risks.</p>
+            <a href="index.html#contact" class="btn btn-gold btn-full" style="margin-top:16px;">Start a SIP — Contact Us</a>
+          </div>
+          <div class="ic-chart-area">
+            <canvas id="ic-sipChart" width="380" height="320"></canvas>
+            <div class="ic-legend">
+              <div class="ic-legend-item"><span class="ic-legend-dot" style="background:rgba(27,134,201,0.5)"></span>Invested</div>
+              <div class="ic-legend-item"><span class="ic-legend-dot" style="background:var(--green)"></span>Returns</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ PANEL 2: Risk Profiler ════ -->
+      <div class="ic-panel" id="panel-risk">
+        <div class="ic-tool-card">
+          <div class="ic-tool-header">
+            <div class="ic-tool-icon">🎯</div>
+            <div class="ic-tool-header-text">
+              <h2>Risk Profiler</h2>
+              <p>Understand your risk appetite before you invest — takes about 3 minutes.</p>
+            </div>
+          </div>
+          <div class="ic-tool-body">
+            <div class="ic-tool-steps">
+              <div class="ic-step">
+                <div class="ic-step-num">1</div>
+                <div class="ic-step-title">Answer 10 Questions</div>
+                <div class="ic-step-desc">Short questions about your income, goals, investment horizon, and comfort with market movements.</div>
+              </div>
+              <div class="ic-step">
+                <div class="ic-step-num">2</div>
+                <div class="ic-step-title">Get Your Risk Score</div>
+                <div class="ic-step-desc">Instantly see whether you are Conservative, Moderate, or Aggressive — with a plain-English explanation.</div>
+              </div>
+              <div class="ic-step">
+                <div class="ic-step-num">3</div>
+                <div class="ic-step-title">Share with Us</div>
+                <div class="ic-step-desc">Share your result when you contact us — it helps us show you the right fund categories for your profile.</div>
+              </div>
+            </div>
+            <a href="https://moneymultiplier.in/rvr-risk.php" target="_blank" rel="noopener" class="ic-launch-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Start Risk Profiler
+            </a>
+            <div class="ic-tool-disclaimer">
+              <strong>Disclaimer:</strong> This risk profiler is an external third-party tool operated by Money Multiplier. Divine Partners has no affiliation with or responsibility for its content, accuracy, or privacy practices. The tool is for self-assessment only and does not constitute investment advice or a suitability recommendation. Please read the tool's own terms before proceeding.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ PANEL 3: Financial Health Check ════ -->
+      <div class="ic-panel" id="panel-health">
+        <div class="ic-tool-card">
+          <div class="ic-tool-header">
+            <div class="ic-tool-icon">💚</div>
+            <div class="ic-tool-header-text">
+              <h2>Financial Health Check</h2>
+              <p>A quick check-up across 5 key areas of your personal finances.</p>
+            </div>
+          </div>
+          <div class="ic-tool-body">
+            <div class="ic-tool-steps">
+              <div class="ic-step">
+                <div class="ic-step-num">1</div>
+                <div class="ic-step-title">5 Financial Areas</div>
+                <div class="ic-step-desc">Emergency fund, insurance cover, debt levels, savings rate, and investment progress are assessed.</div>
+              </div>
+              <div class="ic-step">
+                <div class="ic-step-num">2</div>
+                <div class="ic-step-title">Get Your Health Score</div>
+                <div class="ic-step-desc">See a score for each area and an overall financial health rating — with suggestions on where to focus.</div>
+              </div>
+              <div class="ic-step">
+                <div class="ic-step-num">3</div>
+                <div class="ic-step-title">Take Action</div>
+                <div class="ic-step-desc">Use the results to prioritise — then contact us to help with the mutual fund and insurance parts.</div>
+              </div>
+            </div>
+            <a href="https://moneymultiplier.in/rvh-health.php" target="_blank" rel="noopener" class="ic-launch-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Start Health Check
+            </a>
+            <div class="ic-tool-disclaimer">
+              <strong>Disclaimer:</strong> This financial health check is an external third-party tool operated by Money Multiplier. Divine Partners has no affiliation with or responsibility for its content, accuracy, or privacy practices. The results are for general self-awareness only and do not constitute financial, tax, or investment advice. Please read the tool's own terms before proceeding.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /ic-container -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-regulatory">
+      <div class="container">
+        <div class="footer-reg-links">
+          <a href="https://www.amfiindia.com/uploads/Revised_Codeof_Conductfor_Mutual_Fund_Distributors_April2022_57d91fe1c4.pdf" target="_blank" rel="noopener">Code of Conduct</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="disclosure.html">Disclosure</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="disclaimer.html">Disclaimer</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-row">
+          <p class="footer-disclaimer-text">Mutual Fund investments are subject to market risks. Divine Partners is an AMFI-Registered Mutual Fund Distributor (ARN-115122) and is NOT a SEBI-Registered Investment Adviser.</p>
+          <div class="footer-arn-badge"><strong>AMFI Registered Mutual Fund Distributor | ARN-115122</strong></div>
+        </div>
+        <div class="footer-arn-dates">
+          <span>Date of initial registration: <strong>15 December 2012</strong></span>
+          <span>Current validity of ARN: <strong>14 December 2027</strong></span>
+        </div>
+        <div class="footer-copyright">
+          <p>© 2025 Divine Partners. All rights reserved. | <em>Financially Prudent</em></p>
+          <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="sitemap.html">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ── Tab switcher ── */
+    function switchTab(name, btn) {
+      document.querySelectorAll('.ic-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.ic-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+      document.getElementById('panel-' + name).classList.add('active');
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected','true');
+    }
+
+    /* ── Handle hash on load ── */
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#','');
+      if (['sip','risk','health'].includes(hash)) {
+        const btn = document.getElementById(hash);
+        if (btn) switchTab(hash, btn);
+      }
+    });
+
+    /* ── SIP Calculator ── */
+    function formatINR(n) {
+      if (n >= 10000000) return '₹' + (n/10000000).toFixed(2) + 'Cr';
+      if (n >= 100000)   return '₹' + (n/100000).toFixed(2) + 'L';
+      return '₹' + Math.round(n).toLocaleString('en-IN');
+    }
+
+    let icCtx;
+    function calcSIP() {
+      const monthly = parseFloat(document.getElementById('ic-sipAmount').value);
+      const rate    = parseFloat(document.getElementById('ic-sipReturn').value) / 100;
+      const yrs     = parseInt(document.getElementById('ic-sipDuration').value);
+      const months  = yrs * 12;
+      const r       = rate / 12;
+      const invested = monthly * months;
+      const fv       = monthly * (((Math.pow(1+r, months)-1)/r)*(1+r));
+      const returns  = fv - invested;
+
+      document.getElementById('ic-sipAmountVal').textContent  = '₹' + monthly.toLocaleString('en-IN');
+      document.getElementById('ic-sipReturnVal').textContent  = rate * 100 + '%';
+      document.getElementById('ic-sipDurationVal').textContent= yrs + ' Years';
+      document.getElementById('ic-totalInvested').textContent = formatINR(invested);
+      document.getElementById('ic-estReturns').textContent    = formatINR(returns);
+      document.getElementById('ic-totalWealth').textContent   = formatINR(fv);
+      drawDonut(invested, returns);
+    }
+
+    function drawDonut(invested, returns) {
+      const canvas = document.getElementById('ic-sipChart');
+      if (!canvas || !icCtx) return;
+      const total = invested + returns;
+      const w = canvas.width, h = canvas.height;
+      const cx = w/2, cy = h/2 - 20;
+      const r  = Math.min(w,h)/2 - 36;
+      icCtx.clearRect(0,0,w,h);
+      const ang = (invested/total) * Math.PI * 2;
+      const gap = 0.04;
+      const start = -Math.PI/2;
+      // invested
+      icCtx.beginPath();
+      icCtx.arc(cx,cy,r, start+gap/2, start+ang-gap/2);
+      icCtx.arc(cx,cy,r*0.55, start+ang-gap/2, start+gap/2, true);
+      icCtx.closePath();
+      icCtx.fillStyle = 'rgba(27,134,201,0.45)';
+      icCtx.fill();
+      // returns
+      icCtx.beginPath();
+      icCtx.arc(cx,cy,r, start+ang+gap/2, start+Math.PI*2-gap/2);
+      icCtx.arc(cx,cy,r*0.55, start+Math.PI*2-gap/2, start+ang+gap/2, true);
+      icCtx.closePath();
+      icCtx.fillStyle = '#48A349';
+      icCtx.fill();
+      // centre
+      const totalFmt = formatINR(total);
+      icCtx.fillStyle = 'rgba(255,255,255,0.85)';
+      icCtx.font = '12px DM Sans'; icCtx.textAlign = 'center';
+      icCtx.fillText('Total Value', cx, cy-10);
+      icCtx.fillStyle = '#4FA8DE';
+      icCtx.font = 'bold 20px Times New Roman';
+      icCtx.fillText(totalFmt, cx, cy+14);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const canvas = document.getElementById('ic-sipChart');
+      if (canvas) icCtx = canvas.getContext('2d');
+      ['ic-sipAmount','ic-sipReturn','ic-sipDuration'].forEach(id => {
+        document.getElementById(id).addEventListener('input', calcSIP);
+      });
+      calcSIP();
+    });
+
+    /* ── Hamburger ── */
+    document.getElementById('hamburger').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
