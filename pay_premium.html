@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pay Premium Online | Divine Partners</title>
+  <meta name="description" content="Pay your insurance premium online — quick links to all major life, health and general insurance company payment portals." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="legal-combined.css" />
+  <style>
+    .pp-page {
+      min-height: 100vh;
+      background: var(--cream);
+      padding-top: calc(var(--nav-h) + var(--compliance-h) + 48px);
+      padding-bottom: 80px;
+    }
+    .pp-container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* Hero banner */
+    .pp-hero {
+      background: var(--navy);
+      border-radius: 20px;
+      padding: 48px 52px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .pp-hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(72,163,73,0.15), transparent 70%);
+    }
+    .pp-hero-tag {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 12px;
+    }
+    .pp-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 400; color: var(--white);
+      margin-bottom: 12px; line-height: 1.2;
+    }
+    .pp-hero-sub {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 580px; line-height: 1.7;
+    }
+    .pp-hero-note {
+      margin-top: 20px;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.38);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 16px; line-height: 1.6;
+    }
+
+    /* Search bar */
+    .pp-search-wrap {
+      position: relative;
+      margin-bottom: 40px;
+    }
+    .pp-search {
+      width: 100%;
+      padding: 16px 20px 16px 48px;
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 12px;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      outline: none;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .pp-search:focus {
+      border-color: var(--azure);
+      box-shadow: 0 0 0 3px rgba(27,134,201,0.12);
+    }
+    .pp-search-icon {
+      position: absolute;
+      left: 16px; top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray-400);
+      pointer-events: none;
+    }
+    .pp-search-icon svg { width: 18px; height: 18px; }
+
+    /* Category filter tabs */
+    .pp-filters {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .pp-filter {
+      padding: 8px 20px;
+      border-radius: 100px;
+      border: 1px solid var(--cream-dark);
+      background: var(--white);
+      font-family: var(--font-sans);
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-mid);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .pp-filter.active {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+    .pp-filter:hover:not(.active) {
+      border-color: var(--azure);
+      color: var(--azure);
+    }
+
+    /* Section heading */
+    .pp-section-heading {
+      font-family: var(--font-sans);
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-light);
+      display: flex; align-items: center; gap: 12px;
+      margin: 36px 0 20px;
+    }
+    .pp-section-heading::after {
+      content: ''; flex: 1;
+      height: 1px; background: var(--cream-dark);
+    }
+
+    /* Company grid */
+    .pp-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    /* Company card */
+    .pp-card {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 12px;
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+      text-decoration: none;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .pp-card::before {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--azure), var(--green));
+      transform: scaleX(0);
+      transition: var(--transition);
+    }
+    .pp-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+    .pp-card:hover::before { transform: scaleX(1); }
+
+    .pp-card-icon {
+      width: 48px; height: 48px;
+      border-radius: 10px;
+      background: var(--cream);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .pp-card-name {
+      font-family: var(--font-sans);
+      font-size: 0.82rem; font-weight: 600;
+      color: var(--navy); line-height: 1.3;
+    }
+    .pp-card-type {
+      font-size: 0.68rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-light);
+      padding: 2px 8px;
+      background: var(--cream);
+      border-radius: 100px;
+    }
+    .pp-card-link {
+      font-size: 0.72rem; font-weight: 600;
+      color: var(--azure);
+      display: flex; align-items: center; gap: 4px;
+    }
+    .pp-card-link svg { width: 12px; height: 12px; }
+
+    /* No results */
+    .pp-no-results {
+      text-align: center; padding: 60px 20px;
+      color: var(--text-light); font-size: 0.95rem;
+      display: none;
+    }
+
+    /* Disclaimer */
+    .pp-disclaimer {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 48px;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+    .pp-disclaimer strong { color: var(--navy); }
+
+    @media (max-width: 960px) { .pp-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 640px) {
+      .pp-grid { grid-template-columns: repeat(2, 1fr); }
+      .pp-hero { padding: 28px 20px; }
+    }
+    @media (max-width: 400px) { .pp-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- Compliance Bar -->
+  <div class="compliance-bar">
+    <div class="container compliance-bar-inner">
+      <span>AMFI-registered Mutual Fund Distributor</span>
+      <span class="compliance-divider">|</span>
+      <span>ARN-115122</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Divine Partners Logo" class="nav-logo-img" />
+        <div class="logo-text">
+          <span class="logo-sub">Mutual Fund Distributor</span>
+          <span class="logo-tagline">Financially Prudent</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="investor-corner.html" class="nav-link">Investor Corner</a>
+        <a href="pay-premium.html" class="nav-link active">Pay Premium</a>
+        <a href="index.html#contact" class="nav-cta">Get Started</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="pp-page">
+    <div class="pp-container">
+
+      <!-- Hero -->
+      <div class="pp-hero">
+        <div class="pp-hero-tag">Quick Access</div>
+        <h1 class="pp-hero-title">Pay Premium Online</h1>
+        <p class="pp-hero-sub">One-click access to the official payment portals of all major life, health, and general insurance companies. Click any company below to go directly to their payment page.</p>
+        <p class="pp-hero-note">⚠ All links open the insurer's own official website in a new tab. Divine Partners is not responsible for transactions completed on third-party portals. For policy queries, contact your insurer directly or reach us at info@divinepartners.in</p>
+      </div>
+
+      <!-- Search -->
+      <div class="pp-search-wrap">
+        <div class="pp-search-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <input type="text" class="pp-search" id="ppSearch" placeholder="Search insurer — e.g. LIC, HDFC, ICICI, Tata..." />
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="pp-filters">
+        <button class="pp-filter active" data-cat="all">All</button>
+        <button class="pp-filter" data-cat="life">Life Insurance</button>
+        <button class="pp-filter" data-cat="health">Health Insurance</button>
+        <button class="pp-filter" data-cat="general">General Insurance</button>
+      </div>
+
+      <!-- ── LIFE INSURANCE ── -->
+      <div class="pp-section-heading" data-section="life">Life Insurance</div>
+      <div class="pp-grid" id="grid-life">
+
+        <a href="https://licindia.in/Home/Premium-Payment" target="_blank" rel="noopener" class="pp-card" data-cat="life" data-name="lic life insurance corporation">
+          <div class="pp-card-icon">🏛️</div>
+          <div class="pp-card-name">LIC of India</div>
+          <div class="pp-card-type">Life</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.hdfclife.com/customer-service/quick-pay" target="_blank" rel="noopener" class="pp-card" data-cat="life" data-name="hdfc life insurance">
+          <div class="pp-card-icon">🏠</div>
+          <div class="pp-card-name">HDFC Life</div>
+          <div class="pp-card-type">Life</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.iciciprulife.com/premium-payment/pay-premium-online.html" target="_blank" rel="noopener" class="pp-card" data-cat="life" data-name="icici prudential life insurance">
+          <div class="pp-card-icon">💙</div>
+          <div class="pp-card-name">ICICI Prudential Life</div>
+          <div class="pp-card-type">Life</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.sbilife.co.in/en/customer-services/premium-payment" target="_blank" rel="noopener" class="pp-card" data-cat="life" data-name="sbi life insurance">
+          <div class="pp-card-icon">🏦</div>
+          <div class="pp-card-name">SBI Life</div>
+          <div class="pp-card-type">Life</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.maxlifeinsurance.com/customer-portal/pay-premium" target="_blank" rel="noopener" class="pp-card" data-cat="life" data-name="max life insurance">
+          <div class="pp-card-icon">🔴</div>
+          <div class="pp-card-name">Max Life Insurance</div>
+          <div class="pp-card-type">Life</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.tataaia.com/content/tataaia/in/en/customer-service/pay-premium.html" target="_blank" rel="noopener" class="pp-card" data-cat="life" data-name="tata aia life insurance">
+          <div class="pp-card-icon">🦁</div>
+          <div class="pp-card-name">Tata AIA Life</div>
+          <div class="pp-card-type">Life</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.bajajallianz.com/quick-pay.html" target="_blank" rel="noopener" class="pp-card" data-cat="life" data-name="bajaj allianz life insurance">
+          <div class="pp-card-icon">🔵</div>
+          <div class="pp-card-name">Bajaj Allianz Life</div>
+          <div class="pp-card-type">Life</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.kotaklife.com/quick-pay" target="_blank" rel="noopener" class="pp-card" data-cat="life" data-name="kotak mahindra life insurance">
+          <div class="pp-card-icon">🔴</div>
+          <div class="pp-card-name">Kotak Life</div>
+          <div class="pp-card-type">Life</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.pnbmetlife.com/customer-service/pay-premium.html" target="_blank" rel="noopener" class="pp-card" data-cat="life" data-name="pnb metlife life insurance">
+          <div class="pp-card-icon">🟣</div>
+          <div class="pp-card-name">PNB MetLife</div>
+          <div class="pp-card-type">Life</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://customer.adityabirlacapital.com/insurance/life-insurance" target="_blank" rel="noopener" class="pp-card" data-cat="life" data-name="aditya birla sun life insurance">
+          <div class="pp-card-icon">☀️</div>
+          <div class="pp-card-name">Aditya Birla Sun Life</div>
+          <div class="pp-card-type">Life</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.aegonlife.com/customer-service/premium-payment" target="_blank" rel="noopener" class="pp-card" data-cat="life" data-name="aegon life insurance">
+          <div class="pp-card-icon">🔶</div>
+          <div class="pp-card-name">Aegon Life</div>
+          <div class="pp-card-type">Life</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.reliancelife.com/customer-service/quick-pay" target="_blank" rel="noopener" class="pp-card" data-cat="life" data-name="reliance nippon life insurance">
+          <div class="pp-card-icon">⚡</div>
+          <div class="pp-card-name">Reliance Nippon Life</div>
+          <div class="pp-card-type">Life</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+      </div><!-- /grid-life -->
+
+      <!-- ── HEALTH INSURANCE ── -->
+      <div class="pp-section-heading" data-section="health">Health Insurance</div>
+      <div class="pp-grid" id="grid-health">
+
+        <a href="https://www.starhealth.in/pay-premium" target="_blank" rel="noopener" class="pp-card" data-cat="health" data-name="star health insurance">
+          <div class="pp-card-icon">⭐</div>
+          <div class="pp-card-name">Star Health Insurance</div>
+          <div class="pp-card-type">Health</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.niva-bupa.com/pay-premium" target="_blank" rel="noopener" class="pp-card" data-cat="health" data-name="niva bupa max bupa health insurance">
+          <div class="pp-card-icon">💚</div>
+          <div class="pp-card-name">Niva Bupa Health</div>
+          <div class="pp-card-type">Health</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.careinsurance.com/pay-premium.html" target="_blank" rel="noopener" class="pp-card" data-cat="health" data-name="care health insurance religare">
+          <div class="pp-card-icon">🌿</div>
+          <div class="pp-card-name">Care Health Insurance</div>
+          <div class="pp-card-type">Health</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.manipalcigna.com/pay-premium" target="_blank" rel="noopener" class="pp-card" data-cat="health" data-name="manipal cigna health insurance">
+          <div class="pp-card-icon">🔵</div>
+          <div class="pp-card-name">ManipalCigna Health</div>
+          <div class="pp-card-type">Health</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.adityabirlahealth.com/quick-pay" target="_blank" rel="noopener" class="pp-card" data-cat="health" data-name="aditya birla activ health insurance">
+          <div class="pp-card-icon">☀️</div>
+          <div class="pp-card-name">Aditya Birla Health</div>
+          <div class="pp-card-type">Health</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.hdfcergo.com/pay-premium" target="_blank" rel="noopener" class="pp-card" data-cat="health" data-name="hdfc ergo health insurance">
+          <div class="pp-card-icon">🏠</div>
+          <div class="pp-card-name">HDFC ERGO Health</div>
+          <div class="pp-card-type">Health</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.icicilombard.com/health-insurance/quick-pay" target="_blank" rel="noopener" class="pp-card" data-cat="health" data-name="icici lombard health insurance">
+          <div class="pp-card-icon">💙</div>
+          <div class="pp-card-name">ICICI Lombard Health</div>
+          <div class="pp-card-type">Health</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.godigit.com/pay-premium" target="_blank" rel="noopener" class="pp-card" data-cat="health" data-name="digit health insurance">
+          <div class="pp-card-icon">🟢</div>
+          <div class="pp-card-name">Digit Health Insurance</div>
+          <div class="pp-card-type">Health</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+      </div><!-- /grid-health -->
+
+      <!-- ── GENERAL INSURANCE ── -->
+      <div class="pp-section-heading" data-section="general">General Insurance</div>
+      <div class="pp-grid" id="grid-general">
+
+        <a href="https://www.bajajallianz.com/quick-pay.html" target="_blank" rel="noopener" class="pp-card" data-cat="general" data-name="bajaj allianz general insurance">
+          <div class="pp-card-icon">🔵</div>
+          <div class="pp-card-name">Bajaj Allianz General</div>
+          <div class="pp-card-type">General</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.hdfcergo.com/pay-premium" target="_blank" rel="noopener" class="pp-card" data-cat="general" data-name="hdfc ergo general insurance">
+          <div class="pp-card-icon">🏠</div>
+          <div class="pp-card-name">HDFC ERGO General</div>
+          <div class="pp-card-type">General</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.icicilombard.com/pay-premium" target="_blank" rel="noopener" class="pp-card" data-cat="general" data-name="icici lombard general insurance">
+          <div class="pp-card-icon">💙</div>
+          <div class="pp-card-name">ICICI Lombard General</div>
+          <div class="pp-card-type">General</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.tataaig.com/pay-premium" target="_blank" rel="noopener" class="pp-card" data-cat="general" data-name="tata aig general insurance">
+          <div class="pp-card-icon">🦁</div>
+          <div class="pp-card-name">Tata AIG General</div>
+          <div class="pp-card-type">General</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.newindia.co.in/portal/online-payment" target="_blank" rel="noopener" class="pp-card" data-cat="general" data-name="new india assurance general insurance">
+          <div class="pp-card-icon">🇮🇳</div>
+          <div class="pp-card-name">New India Assurance</div>
+          <div class="pp-card-type">General</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.reliancegeneral.co.in/pay-premium" target="_blank" rel="noopener" class="pp-card" data-cat="general" data-name="reliance general insurance">
+          <div class="pp-card-icon">⚡</div>
+          <div class="pp-card-name">Reliance General</div>
+          <div class="pp-card-type">General</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.godigit.com/pay-premium" target="_blank" rel="noopener" class="pp-card" data-cat="general" data-name="digit general insurance">
+          <div class="pp-card-icon">🟢</div>
+          <div class="pp-card-name">Digit General Insurance</div>
+          <div class="pp-card-type">General</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+        <a href="https://www.orientalinsurance.org.in/payment" target="_blank" rel="noopener" class="pp-card" data-cat="general" data-name="oriental insurance general">
+          <div class="pp-card-icon">🏛️</div>
+          <div class="pp-card-name">Oriental Insurance</div>
+          <div class="pp-card-type">General</div>
+          <div class="pp-card-link">Pay Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        </a>
+
+      </div><!-- /grid-general -->
+
+      <div class="pp-no-results" id="ppNoResults">
+        No insurers found for "<span id="ppSearchTerm"></span>". Try a different name.
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="pp-disclaimer">
+        <strong>Important Notice:</strong> All links on this page direct you to the official websites of the respective insurance companies. Divine Partners does not process, handle, or receive any premium payments. Transactions are completed entirely on the insurer's own secured portal. Divine Partners is an AMFI-Registered Mutual Fund Distributor (ARN-115122) and an IRDAI-licensed insurance distribution intermediary. For any policy or payment queries, contact the insurer directly or reach us at <a href="mailto:info@divinepartners.in">info@divinepartners.in</a>. Insurance products mentioned are subject to the terms, conditions, and exclusions of the respective insurer's policy documents.
+      </div>
+
+    </div><!-- /pp-container -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-regulatory">
+      <div class="container">
+        <div class="footer-reg-links">
+          <a href="disclosure.html">Disclosure</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="disclaimer.html">Disclaimer</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <span class="footer-reg-sep">|</span>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-row">
+          <p class="footer-disclaimer-text">Mutual Fund investments are subject to market risks. Divine Partners is an AMFI-Registered Mutual Fund Distributor (ARN-115122) and is NOT a SEBI-Registered Investment Adviser.</p>
+          <div class="footer-arn-badge"><strong>AMFI Registered Mutual Fund Distributor | ARN-115122</strong></div>
+        </div>
+        <div class="footer-copyright">
+          <p>© 2025 Divine Partners. All rights reserved. | <em>Financially Prudent</em></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ── Search + filter ── */
+    const searchInput = document.getElementById('ppSearch');
+    const noResults   = document.getElementById('ppNoResults');
+    const searchTerm  = document.getElementById('ppSearchTerm');
+    const cards       = document.querySelectorAll('.pp-card');
+    const sections    = document.querySelectorAll('.pp-section-heading');
+    let activeFilter  = 'all';
+
+    function applyFilters() {
+      const q = searchInput.value.toLowerCase().trim();
+      let visible = 0;
+
+      cards.forEach(card => {
+        const name = card.dataset.name || '';
+        const cat  = card.dataset.cat  || '';
+        const matchQ   = !q || name.includes(q);
+        const matchCat = activeFilter === 'all' || cat === activeFilter;
+        const show = matchQ && matchCat;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+
+      // Show/hide section headings based on filter
+      sections.forEach(s => {
+        const sec = s.dataset.section;
+        if (activeFilter === 'all' || activeFilter === sec) {
+          s.style.display = '';
+        } else {
+          s.style.display = 'none';
+        }
+      });
+
+      // No results message
+      noResults.style.display = visible === 0 ? 'block' : 'none';
+      searchTerm.textContent = q;
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+
+    document.querySelectorAll('.pp-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.pp-filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.dataset.cat;
+        applyFilters();
+      });
+    });
+
+    /* ── Hamburger ── */
+    document.getElementById('hamburger').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
