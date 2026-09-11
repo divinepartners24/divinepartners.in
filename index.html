@@ -56,14 +56,16 @@
       "addressCountry": "IN"
     },
     "sameAs": [
-      "https://www.linkedin.com/in/divinepartners1/",
+      "https://www.linkedin.com/company/partnersdivine/",
+      "https://www.instagram.com/divinepartners_"
+    ],
       "https://twitter.com/divinepartners"
     ],
     "serviceType": ["Mutual Fund Distribution", "SIP", "Insurance Distribution"]
   }
   </script>
 
-  <link rel="stylesheet" href="style.css?v=4" /> 
+  <link rel="stylesheet" href="style.css?v=5" /> 
 </head>
 <body>
 
@@ -101,6 +103,16 @@
           </div>
         </div>
         <a href="#sip-calculator" class="nav-link">SIP Calculator</a>
+        <div class="nav-dropdown">
+          <a href="investor-corner.html" class="nav-link">Tools <span class="dropdown-arrow">›</span></a>
+          <div class="dropdown-menu">
+            <a href="investor-corner.html#sip" class="dropdown-item">SIP Calculator</a>
+            <a href="investor-corner.html#risk" class="dropdown-item">Risk Profiler</a>
+            <a href="investor-corner.html#health" class="dropdown-item">Financial Health Check</a>
+            <a href="pay-premium.html" class="dropdown-item">Pay Premium Online</a>
+          </div>
+        </div>
+        <a href="team.html" class="nav-link">Our Team</a>
         <a href="#testimonials" class="nav-link">Testimonials</a>
         <a href="#contact" class="nav-link">Contact</a>
         <a href="#contact" class="nav-cta">Get Started</a>
@@ -272,7 +284,7 @@
             </div>
           </div>
 
-          <a href="#contact" class="btn btn-gold">Meet Our Team</a>
+          <a href="team.html" class="btn btn-gold">Meet Our Team</a>
         </div>
       </div>
     </div>
@@ -356,6 +368,42 @@
             <li>Ongoing Transaction Support</li>
           </ul>
           <a href="#contact" class="service-link">NRI Desk →</a>
+        </div>
+
+        <div class="service-card reveal" id="loan-referral">
+          <div class="service-card-glow"></div>
+          <div class="service-num">05</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="14" width="36" height="24" rx="3" stroke="#1B86C9" stroke-width="1.5"/><path d="M14 22H34M14 28H26" stroke="#48A349" stroke-width="1.5" stroke-linecap="round"/><path d="M6 20h36" stroke="#1B86C9" stroke-width="1.5"/><circle cx="36" cy="28" r="5" fill="#16273C" stroke="#48A349" stroke-width="1.5"/><path d="M34 28h4M36 26v4" stroke="#48A349" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="service-title">Loan Referral</h3>
+          <p class="service-desc">We refer clients to regulated lending institutions for home loans, personal loans, and loan against mutual fund units — we are a referral intermediary only and do not lend directly.</p>
+          <ul class="service-features">
+            <li>Home Loan Referrals</li>
+            <li>Loan Against MF Units (LAMF)</li>
+            <li>Personal Loan Referrals</li>
+            <li>Lender Comparison Support</li>
+          </ul>
+          <p class="service-compliance-note">We earn referral fees from lending partners, which are disclosed. We do not provide credit advice. All credit decisions are made solely by the lending institution.</p>
+          <a href="#contact" class="service-link">Enquire →</a>
+        </div>
+
+        <div class="service-card reveal" id="tax-assistance">
+          <div class="service-card-glow"></div>
+          <div class="service-num">06</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="6" width="28" height="36" rx="3" stroke="#1B86C9" stroke-width="1.5"/><path d="M18 16H30M18 22H30M18 28H24" stroke="#3D5C8A" stroke-width="1.5" stroke-linecap="round"/><circle cx="32" cy="34" r="7" fill="#16273C" stroke="#48A349" stroke-width="1.5"/><path d="M29 34l2 2 4-4" stroke="#48A349" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="service-title">Tax Filing Assistance</h3>
+          <p class="service-desc">We assist clients with understanding the tax treatment of their mutual fund investments and refer them to qualified Chartered Accountants for ITR filing and tax planning.</p>
+          <ul class="service-features">
+            <li>Capital Gains Statement Support</li>
+            <li>ELSS & 80C Documentation</li>
+            <li>CA Referral for ITR Filing</li>
+            <li>Tax-Loss Harvesting Awareness</li>
+          </ul>
+          <p class="service-compliance-note">We do not provide tax advice. Clients should consult a qualified CA or tax professional for their individual tax obligations.</p>
+          <a href="#contact" class="service-link">Get Assistance →</a>
         </div>
       </div>
 
@@ -543,6 +591,17 @@
           </div>
 
           <a href="#contact" class="btn btn-gold btn-full">Start a SIP Today</a>
+
+          <!-- Investor Corner Teaser -->
+          <div class="calc-investor-corner">
+            <div class="investor-corner-icon">🔐</div>
+            <div>
+              <p class="investor-corner-title"><strong>Unlock More Tools</strong></p>
+              <p class="investor-corner-desc">Risk Profiler · Health Check · Detailed Reports — available in our <a href="investor-corner.html">Investor Corner</a>.</p>
+            </div>
+            <a href="investor-corner.html" class="btn btn-ghost btn-sm">Explore →</a>
+          </div>
+
           <p class="calc-disclaimer">This calculator is for illustration purposes only, assumes a constant rate of return, and does not guarantee actual results. Mutual Fund investments are subject to market risks.</p>
         </div>
 
@@ -558,45 +617,71 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
-       CLIENT SUCCESS METRICS
+       AMC PARTNERS TICKER
   ═══════════════════════════════════════════ -->
-  <section class="metrics section" id="metrics">
+  <section class="partners section" id="partners">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-tag">By The Numbers</div>
-        <h2 class="section-title">Client Success Metrics</h2>
+        <div class="section-tag">Our Network</div>
+        <h2 class="section-title">AMC Partners</h2>
+        <p class="section-desc">We distribute mutual fund schemes from 22 SEBI-registered Asset Management Companies.</p>
       </div>
+    </div>
 
-      <div class="metrics-grid">
-        <div class="metric-card reveal">
-          <div class="metric-icon">◈</div>
-          <div class="metric-num" data-target="500">0</div><div class="metric-suffix">+</div>
-          <div class="metric-label">Families Served</div>
+    <div class="partners-ticker-wrap">
+      <div class="partners-ticker">
+        <!-- Row 1 — scrolls left -->
+        <div class="ticker-track ticker-track--left" id="tickerRow1">
+          <div class="ticker-item">360 ONE Mutual Fund</div>
+          <div class="ticker-item">Abakkus Mutual Fund</div>
+          <div class="ticker-item">Aditya Birla Sun Life MF</div>
+          <div class="ticker-item">Axis Mutual Fund</div>
+          <div class="ticker-item">Bajaj Finserv Mutual Fund</div>
+          <div class="ticker-item">Bandhan Mutual Fund</div>
+          <div class="ticker-item">Baroda BNP Paribas MF</div>
+          <div class="ticker-item">Canara Robeco MF</div>
+          <div class="ticker-item">Diviniti SIF</div>
+          <div class="ticker-item">DSP Mutual Fund</div>
+          <div class="ticker-item">Edelweiss Mutual Fund</div>
+          <!-- Duplicate for seamless loop -->
+          <div class="ticker-item">360 ONE Mutual Fund</div>
+          <div class="ticker-item">Abakkus Mutual Fund</div>
+          <div class="ticker-item">Aditya Birla Sun Life MF</div>
+          <div class="ticker-item">Axis Mutual Fund</div>
+          <div class="ticker-item">Bajaj Finserv Mutual Fund</div>
+          <div class="ticker-item">Bandhan Mutual Fund</div>
+          <div class="ticker-item">Baroda BNP Paribas MF</div>
+          <div class="ticker-item">Canara Robeco MF</div>
+          <div class="ticker-item">Diviniti SIF</div>
+          <div class="ticker-item">DSP Mutual Fund</div>
+          <div class="ticker-item">Edelweiss Mutual Fund</div>
         </div>
-        <div class="metric-card reveal">
-          <div class="metric-icon">◈</div>
-          <div class="metric-num" data-target="150">0</div><div class="metric-suffix">Cr+</div>
-          <div class="metric-label">Assets Mobilised</div>
-        </div>
-        <div class="metric-card reveal">
-          <div class="metric-icon">◈</div>
-          <div class="metric-num" data-target="98">0</div><div class="metric-suffix">%</div>
-          <div class="metric-label">Client Retention Rate</div>
-        </div>
-        <div class="metric-card reveal">
-          <div class="metric-icon">◈</div>
-          <div class="metric-num" data-target="12">0</div><div class="metric-suffix">+</div>
-          <div class="metric-label">Years of Excellence</div>
-        </div>
-        <div class="metric-card reveal">
-          <div class="metric-icon">◈</div>
-          <div class="metric-num" data-target="25">0</div><div class="metric-suffix">+</div>
-          <div class="metric-label">Fund Partners</div>
-        </div>
-        <div class="metric-card reveal">
-          <div class="metric-icon">◈</div>
-          <div class="metric-num" data-target="4">0</div><div class="metric-suffix">.8★</div>
-          <div class="metric-label">Average Client Rating</div>
+
+        <!-- Row 2 — scrolls right -->
+        <div class="ticker-track ticker-track--right" id="tickerRow2">
+          <div class="ticker-item">Franklin Templeton MF</div>
+          <div class="ticker-item">Groww Mutual Fund</div>
+          <div class="ticker-item">HDFC Mutual Fund</div>
+          <div class="ticker-item">ICICI Prudential MF</div>
+          <div class="ticker-item">Kotak Mutual Fund</div>
+          <div class="ticker-item">Mahindra Manulife MF</div>
+          <div class="ticker-item">Mirae Asset MF</div>
+          <div class="ticker-item">Motilal Oswal MF</div>
+          <div class="ticker-item">Nippon India MF</div>
+          <div class="ticker-item">PPFAS Mutual Fund</div>
+          <div class="ticker-item">Quantum Mutual Fund</div>
+          <!-- Duplicate for seamless loop -->
+          <div class="ticker-item">Franklin Templeton MF</div>
+          <div class="ticker-item">Groww Mutual Fund</div>
+          <div class="ticker-item">HDFC Mutual Fund</div>
+          <div class="ticker-item">ICICI Prudential MF</div>
+          <div class="ticker-item">Kotak Mutual Fund</div>
+          <div class="ticker-item">Mahindra Manulife MF</div>
+          <div class="ticker-item">Mirae Asset MF</div>
+          <div class="ticker-item">Motilal Oswal MF</div>
+          <div class="ticker-item">Nippon India MF</div>
+          <div class="ticker-item">PPFAS Mutual Fund</div>
+          <div class="ticker-item">Quantum Mutual Fund</div>
         </div>
       </div>
     </div>
@@ -789,13 +874,13 @@
             </div>
 
             <div class="contact-social">
-              <a href="#" class="social-link" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/partnersdivine/home/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
               </a>
-              <a href="#" class="social-link" aria-label="Instagram">
+              <a href="https://www.instagram.com/divinepartners_" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
               </a>
-              <a href="https://wa.me/919990230200" class="social-link" aria-label="WhatsApp">
+              <a href="https://wa.me/919990230200" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
               </a>
             </div>
