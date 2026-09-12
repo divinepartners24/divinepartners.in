@@ -65,7 +65,7 @@
   }
   </script>
 
-  <link rel="stylesheet" href="style.css?v=5" /> 
+  <link rel="stylesheet" href="style.css?v=7" /> 
 </head>
 <body>
 
@@ -92,28 +92,36 @@
 
       <div class="nav-links" id="navLinks">
         <a href="#home" class="nav-link active">Home</a>
-        <a href="#about" class="nav-link">About</a>
+        <div class="nav-dropdown">
+          <a href="#about" class="nav-link">About <span class="dropdown-arrow">›</span></a>
+          <div class="dropdown-menu">
+            <a href="#about" class="dropdown-item">About Us</a>
+            <a href="#why" class="dropdown-item">Why Choose Us</a>
+            <a href="#philosophy" class="dropdown-item">Our Philosophy</a>
+            <a href="team.html" class="dropdown-item">Meet the Team</a>
+          </div>
+        </div>
         <div class="nav-dropdown">
           <a href="#services" class="nav-link">Services <span class="dropdown-arrow">›</span></a>
           <div class="dropdown-menu">
             <a href="#mutual-funds" class="dropdown-item">Mutual Funds</a>
             <a href="#insurance" class="dropdown-item">Insurance</a>
-            <a href="#sip-services" class="dropdown-item">SIP Setup & Support</a>
+            <a href="#sip-services" class="dropdown-item">SIP Support</a>
             <a href="#nri-services" class="dropdown-item">NRI Services</a>
+            <a href="#loan-referral" class="dropdown-item">Loan Referral</a>
+            <a href="#tax-assistance" class="dropdown-item">Tax Assistance</a>
           </div>
         </div>
-        <a href="#sip-calculator" class="nav-link">SIP Calculator</a>
         <div class="nav-dropdown">
-          <a href="investor_corner.html" class="nav-link">Tools <span class="dropdown-arrow">›</span></a>
+          <a href="investor-corner.html" class="nav-link">Tools <span class="dropdown-arrow">›</span></a>
           <div class="dropdown-menu">
-            <a href="investor_corner.html#sip" class="dropdown-item">SIP Calculator</a>
-            <a href="investor_corner.html#risk" class="dropdown-item">Risk Profiler</a>
-            <a href="investor_corner.html#health" class="dropdown-item">Financial Health Check</a>
-            <a href="pay_premium.html" class="dropdown-item">Pay Premium Online</a>
+            <a href="investor-corner.html#sip" class="dropdown-item">SIP Calculator</a>
+            <a href="investor-corner.html#risk" class="dropdown-item">Risk Profiler</a>
+            <a href="investor-corner.html#health" class="dropdown-item">Health Check</a>
+            <a href="pay-premium.html" class="dropdown-item">Pay Premium</a>
           </div>
         </div>
-        <a href="team.html" class="nav-link">Our Team</a>
-        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#testimonials" class="nav-link">Clients</a>
         <a href="#contact" class="nav-link">Contact</a>
         <a href="#contact" class="nav-cta">Get Started</a>
       </div>
@@ -521,14 +529,14 @@
             <div class="timeline-title">Illustrative SIP Growth Over Time*</div>
             <div class="timeline-chart">
               <div class="chart-bars">
-                <div class="chart-bar" style="--h:15%"><span>Y1</span></div>
-                <div class="chart-bar" style="--h:22%"><span>Y2</span></div>
-                <div class="chart-bar" style="--h:31%"><span>Y3</span></div>
-                <div class="chart-bar" style="--h:42%"><span>Y5</span></div>
-                <div class="chart-bar" style="--h:58%"><span>Y7</span></div>
-                <div class="chart-bar" style="--h:72%"><span>Y10</span></div>
-                <div class="chart-bar" style="--h:88%"><span>Y15</span></div>
-                <div class="chart-bar highlighted" style="--h:100%"><span>Y20</span></div>
+                <div class="chart-bar" style="--h:30px"><span>Y1</span></div>
+                <div class="chart-bar" style="--h:44px"><span>Y2</span></div>
+                <div class="chart-bar" style="--h:62px"><span>Y3</span></div>
+                <div class="chart-bar" style="--h:84px"><span>Y5</span></div>
+                <div class="chart-bar" style="--h:116px"><span>Y7</span></div>
+                <div class="chart-bar" style="--h:144px"><span>Y10</span></div>
+                <div class="chart-bar" style="--h:176px"><span>Y15</span></div>
+                <div class="chart-bar highlighted" style="--h:200px"><span>Y20</span></div>
               </div>
               <div class="chart-label">₹10L → ₹1.2Cr @ 12% assumed CAGR*</div>
               <div class="chart-footnote">*Hypothetical illustration only. Not a guarantee or promise of returns. Actual mutual fund returns are market-linked and may vary.</div>
@@ -540,78 +548,48 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
-       SIP CALCULATOR
+       INVESTOR CORNER TEASER
   ═══════════════════════════════════════════ -->
-  <section class="calculator section section--dark" id="sip-calculator">
+  <section class="ic-teaser section section--dark" id="investor-corner">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-tag">Illustration Tool</div>
-        <h2 class="section-title section-title--light">SIP Returns Calculator</h2>
-        <p class="section-desc section-desc--light">A hypothetical illustration of disciplined monthly investing. This is not a projection, promise, or guarantee of actual returns.</p>
+        <div class="section-tag">Self-Service Tools</div>
+        <h2 class="section-title section-title--light">Investor Corner</h2>
+        <p class="section-desc section-desc--light">Know yourself before you invest. Our toolkit helps you understand your risk appetite, assess your financial health, and project your SIP returns — all in one place.</p>
       </div>
 
-      <div class="calc-wrapper reveal">
-        <div class="calc-inputs">
-          <div class="calc-field">
-            <label>Monthly SIP Amount</label>
-            <div class="calc-input-group">
-              <span class="calc-prefix">₹</span>
-              <input type="range" id="sipAmount" min="500" max="100000" value="10000" step="500" />
-              <span class="calc-value" id="sipAmountVal">₹10,000</span>
-            </div>
-          </div>
-          <div class="calc-field">
-            <label>Expected Annual Returns</label>
-            <div class="calc-input-group">
-              <input type="range" id="sipReturn" min="5" max="30" value="12" step="0.5" />
-              <span class="calc-value" id="sipReturnVal">12%</span>
-            </div>
-          </div>
-          <div class="calc-field">
-            <label>Investment Duration</label>
-            <div class="calc-input-group">
-              <input type="range" id="sipDuration" min="1" max="40" value="15" step="1" />
-              <span class="calc-value" id="sipDurationVal">15 Years</span>
-            </div>
-          </div>
+      <div class="ic-teaser-grid reveal">
 
-          <div class="calc-results">
-            <div class="calc-result-item">
-              <span class="result-label">Total Invested</span>
-              <span class="result-value" id="totalInvested">₹18,00,000</span>
-            </div>
-            <div class="calc-result-item">
-              <span class="result-label">Hypothetical Returns</span>
-              <span class="result-value result-value--gold" id="estimatedReturns">₹32,00,000</span>
-            </div>
-            <div class="calc-result-item calc-result-item--total">
-              <span class="result-label">Hypothetical Total Value</span>
-              <span class="result-value result-value--large" id="totalWealth">₹50,00,000</span>
-            </div>
-          </div>
+        <!-- SIP Calculator -->
+        <a href="investor-corner.html#sip" class="ic-teaser-card">
+          <div class="ic-teaser-icon">📊</div>
+          <h3>SIP Calculator</h3>
+          <p>See how disciplined monthly investing compounds over 5, 10, 20 years. Adjust amount, duration, and expected return — instantly.</p>
+          <div class="ic-teaser-cta">Try Calculator →</div>
+        </a>
 
-          <a href="#contact" class="btn btn-gold btn-full">Start a SIP Today</a>
+        <!-- Risk Profiler -->
+        <a href="investor-corner.html#risk" class="ic-teaser-card ic-teaser-card--highlight">
+          <div class="ic-teaser-badge">Most Useful</div>
+          <div class="ic-teaser-icon">🎯</div>
+          <h3>Risk Profiler</h3>
+          <p>12 questions designed by practitioners — the same ones we ask every new client. Discover whether you are Conservative, Moderate, or Aggressive before selecting any fund.</p>
+          <div class="ic-teaser-cta">Find My Risk Profile →</div>
+        </a>
 
-          <!-- Investor Corner Teaser -->
-          <div class="calc-investor-corner">
-            <div class="investor-corner-icon">🔐</div>
-            <div>
-              <p class="investor-corner-title"><strong>Unlock More Tools</strong></p>
-              <p class="investor-corner-desc">Risk Profiler · Health Check · Detailed Reports — available in our <a href="investor-corner.html">Investor Corner</a>.</p>
-            </div>
-            <a href="investor-corner.html" class="btn btn-ghost btn-sm">Explore →</a>
-          </div>
+        <!-- Financial Health Check -->
+        <a href="investor-corner.html#health" class="ic-teaser-card">
+          <div class="ic-teaser-icon">💚</div>
+          <h3>Financial Health Check</h3>
+          <p>Assess 5 pillars of your financial life — emergency fund, insurance coverage, debt, savings rate, and investments. Get a plain-English score.</p>
+          <div class="ic-teaser-cta">Check My Health →</div>
+        </a>
 
-          <p class="calc-disclaimer">This calculator is for illustration purposes only, assumes a constant rate of return, and does not guarantee actual results. Mutual Fund investments are subject to market risks.</p>
-        </div>
+      </div>
 
-        <div class="calc-chart-area">
-          <canvas id="sipChart" width="400" height="350"></canvas>
-          <div class="chart-legend">
-            <div class="legend-item"><span class="legend-dot legend-dot--invested"></span>Amount Invested</div>
-            <div class="legend-item"><span class="legend-dot legend-dot--returns"></span>Hypothetical Returns</div>
-          </div>
-        </div>
+      <div class="ic-teaser-footer reveal">
+        <p class="ic-teaser-note">All tools are for self-assessment and illustration only. They do not constitute investment advice. Divine Partners is an AMFI-Registered Mutual Fund Distributor (ARN-115122).</p>
+        <a href="investor-corner.html" class="btn btn-gold">Go to Investor Corner</a>
       </div>
     </div>
   </section>
