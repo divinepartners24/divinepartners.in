@@ -819,11 +819,128 @@
     }
   }
 
+
   function hcBack() {
     if (hcCurrent > 0) {
       document.querySelectorAll('#panel-health .quiz-question')[hcCurrent].classList.remove('active');
       hcCurrent--;
       document.querySelectorAll('#panel-health .quiz-question')[hcCurrent].classList.add('active');
       document.getElementById('hc-next').disabled = false;
-      document.getElementById('hc-next').textContent = hcCurrent === HC_TOTAL - 1 ? 'See My Score →' : 'Next →';
-      document
+      document.getElementById('hc-next').textContent = hcCurrent === HC_TOTAL - 1 ? 'See My Score \u2192' : 'Next \u2192';
+      document.getElementById('hc-back').style.visibility = hcCurrent === 0 ? 'hidden' : 'visible';
+      hcUpdateProgress();
+    }
+  }
+
+  function hcRetake() {
+    hcCurrent = 0;
+    hcAnswers = new Array(HC_TOTAL).fill(null);
+    document.querySelectorAll('#panel-health .quiz-question').forEach(function(q){ q.classList.remove('active'); });
+    document.querySelectorAll('#panel-health .quiz-question')[0].classList.add('active');
+    document.querySelectorAll('#panel-health .q-option').forEach(function(o){ o.classList.remove('selected'); });
+    document.getElementById('hc-result').classList.remove('show');
+    document.getElementById('hc-next').disabled = true;
+    document.getElementById('hc-next').textContent = 'Next \u2192';
+    document.getElementById('hc-back').style.visibility = 'hidden';
+    document.querySelector('#panel-health .quiz-nav').style.display = 'flex';
+    hcUpdateProgress();
+  }
+
+  function hcShowResult() {
+    var total = hcAnswers.reduce(function(a,b){ return a+(b||0); }, 0);
+    var pct = (total / (HC_TOTAL * 4)) * 100;
+    var profile, desc, color, priorities, steps;
+    if (pct <= 35) {
+      profile = 'Needs Urgent Attention'; color = '#C0392B';
+      desc = 'Your financial foundation has critical gaps. These are fixable. Build the base before building the portfolio.';
+      priorities = [['Emergency Fund','#C0392B15','#C0392B'],['Insurance Coverage','#C0392B15','#C0392B'],['Debt Levels','#C0392B15','#C0392B']];
+      steps = ['<strong>Build 3 months of emergency savings first</strong> — investing without this means selling at the worst time','<strong>Get a pure term insurance policy immediately</strong> — Rs8,000-15,000/year for Rs1Cr cover in your 30s','<strong>List and prioritise all debts</strong> — clear high-interest credit card debt before any investment','<strong>Start a SIP of even Rs500/month</strong> — building the habit matters more than the amount'];
+    } else if (pct <= 55) {
+      profile = 'Developing Financial Health'; color = '#E67E22';
+      desc = 'You have some good habits but meaningful gaps remain. Focused effort over 12 months can significantly strengthen your position.';
+      priorities = [['Savings Rate','#E67E2215','#E67E22'],['Insurance Gaps','#E67E2215','#E67E22'],['Emergency Fund','#E67E2215','#E67E22']];
+      steps = ['<strong>Target a 15% savings rate</strong> — reduce one discretionary category to get there','<strong>Port your employer health policy to a personal one</strong> — it lapses when you change jobs','<strong>Bring EMI outgo below 30% of income</strong> — high debt leaves no room for wealth creation','<strong>Increase your SIP 10% every year</strong> — SIP step-up is the simplest wealth accelerator'];
+    } else if (pct <= 75) {
+      profile = 'Financially Stable'; color = '#1071B3';
+      desc = 'Solid foundation and good habits. The focus now shifts from fixing gaps to optimising — getting more from every rupee invested.';
+      priorities = [['Portfolio Optimisation','#1071B315','#1071B3'],['Tax Efficiency','#1071B315','#1071B3'],['Retirement Planning','#1071B315','#1071B3']];
+      steps = ['<strong>Review your asset allocation</strong> — are you over-exposed to one AMC or category?','<strong>Maximise Section 80C via ELSS</strong> — equity returns plus tax deduction is a rare double benefit','<strong>Check if insurance cover has kept pace</strong> with income and lifestyle growth','<strong>Know your retirement number</strong> — then work backwards to the monthly SIP needed'];
+    } else {
+      profile = 'Financially Mature'; color = '#48A349';
+      desc = 'Excellent discipline across all five pillars. You can now focus on wealth optimisation, tax efficiency, and legacy planning.';
+      priorities = [['Wealth Optimisation','#48A34915','#48A349'],['Tax Planning','#48A34915','#48A349'],['Estate Planning','#48A34915','#48A349']];
+      steps = ['<strong>Review portfolio for concentration risk</strong> — even strong portfolios get over-exposed to one theme','<strong>Consider direct equity or PMS</strong> if your investable surplus exceeds Rs50 lakhs','<strong>Create or update your will and nominations</strong> — estate planning is deferred too long by most','<strong>Talk to your CA about tax-efficient withdrawal</strong> as the portfolio scales'];
+    }
+    document.getElementById('hc-score-ring').style.borderColor = color;
+    document.getElementById('hc-score-ring').style.color = color;
+    document.getElementById('hc-score-num').textContent = total;
+    document.getElementById('hc-progress').style.width = '100%';
+    document.getElementById('hc-progress-text').textContent = HC_TOTAL + ' / ' + HC_TOTAL;
+    document.getElementById('hc-profile').textContent = profile;
+    document.getElementById('hc-desc').textContent = desc;
+    document.getElementById('hc-traits').innerHTML = priorities.map(function(t){ return '<span class="result-trait" style="background:'+t[1]+';color:'+t[2]+';border:1px solid '+t[2]+'">'+t[0]+'</span>'; }).join('');
+    document.getElementById('hc-next-steps').innerHTML = '<h4>Priority actions for you</h4><ul>'+steps.map(function(s){ return '<li>'+s+'</li>'; }).join('')+'</ul>';
+    document.querySelector('#panel-health .quiz-nav').style.display = 'none';
+    document.getElementById('hc-result').classList.add('show');
+  }
+
+  /* SIP CALCULATOR */
+  function fmtINR(n) {
+    if (n >= 10000000) return '\u20b9' + (n/10000000).toFixed(2) + 'Cr';
+    if (n >= 100000)   return '\u20b9' + (n/100000).toFixed(2) + 'L';
+    return '\u20b9' + Math.round(n).toLocaleString('en-IN');
+  }
+  var icCtx;
+  function calcSIP() {
+    var m = parseFloat(document.getElementById('ic-sipAmount').value);
+    var r = parseFloat(document.getElementById('ic-sipReturn').value) / 100 / 12;
+    var n = parseInt(document.getElementById('ic-sipDuration').value) * 12;
+    var inv = m * n;
+    var fv  = m * (((Math.pow(1+r,n)-1)/r)*(1+r));
+    var ret = fv - inv;
+    document.getElementById('ic-sipAmountVal').textContent  = '\u20b9' + m.toLocaleString('en-IN');
+    document.getElementById('ic-sipReturnVal').textContent  = parseFloat(document.getElementById('ic-sipReturn').value) + '%';
+    document.getElementById('ic-sipDurationVal').textContent= document.getElementById('ic-sipDuration').value + ' Years';
+    document.getElementById('ic-totalInvested').textContent = fmtINR(inv);
+    document.getElementById('ic-estReturns').textContent    = fmtINR(ret);
+    document.getElementById('ic-totalWealth').textContent   = fmtINR(fv);
+    drawDonut(inv, ret);
+  }
+  function drawDonut(inv, ret) {
+    var c = document.getElementById('ic-sipChart');
+    if (!c || !icCtx) return;
+    var t=inv+ret, w=c.width, h=c.height, cx=w/2, cy=h/2-16, r=Math.min(w,h)/2-30;
+    icCtx.clearRect(0,0,w,h);
+    var a=(inv/t)*Math.PI*2, s=-Math.PI/2, g=0.04;
+    icCtx.beginPath(); icCtx.arc(cx,cy,r,s+g/2,s+a-g/2); icCtx.arc(cx,cy,r*.55,s+a-g/2,s+g/2,true); icCtx.closePath(); icCtx.fillStyle='rgba(27,134,201,0.45)'; icCtx.fill();
+    icCtx.beginPath(); icCtx.arc(cx,cy,r,s+a+g/2,s+Math.PI*2-g/2); icCtx.arc(cx,cy,r*.55,s+Math.PI*2-g/2,s+a+g/2,true); icCtx.closePath(); icCtx.fillStyle='#48A349'; icCtx.fill();
+    icCtx.fillStyle='rgba(255,255,255,0.8)'; icCtx.font='11px sans-serif'; icCtx.textAlign='center'; icCtx.fillText('Total Value',cx,cy-8);
+    icCtx.fillStyle='#4FA8DE'; icCtx.font='bold 18px serif'; icCtx.fillText(fmtINR(inv+ret),cx,cy+14);
+  }
+
+  /* INIT */
+  document.addEventListener('DOMContentLoaded', function() {
+    var c = document.getElementById('ic-sipChart');
+    if (c) icCtx = c.getContext('2d');
+    ['ic-sipAmount','ic-sipReturn','ic-sipDuration'].forEach(function(id){
+      document.getElementById(id).addEventListener('input', calcSIP);
+    });
+    calcSIP();
+
+    /* Hash routing — from homepage teaser cards */
+    var h = window.location.hash.replace('#','');
+    if (h === 'sip') {
+      switchTab('sip', document.querySelector('.ic-tab[onclick*="sip"]'));
+    } else if (h === 'health') {
+      switchTab('health', document.querySelector('.ic-tab[onclick*="health"]'));
+    }
+    /* default panel is risk — already has class="active" in HTML */
+
+    document.getElementById('hamburger').addEventListener('click', function(){
+      this.classList.toggle('active');
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  });
+</script>
+</body>
+</html>
