@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://divinepartners24.github.io/divinepartners.in/sitemap.xml
