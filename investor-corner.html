@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Investor Corner | Divine Partners</title>
-  <meta name="description" content="Know yourself before you invest. Risk Profiler, Financial Health Check, and SIP Calculator — built by Divine Partners, AMFI-Registered Mutual Fund Distributor ARN-115122." />
+  <title>SIP Calculator, Risk Profiler &amp; Financial Health Check | Divine Partners Gurugram</title>
+  <meta name="description" content="Free investor tools from Divine Partners (ARN-115122), Gurugram. SIP calculator, mutual fund risk profiler, and financial health check — designed by experienced MFD practitioners." />
+  <link rel="canonical" href="https://divinepartners.in/investor-corner.html" />
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -98,6 +99,7 @@
     .result-score-ring { width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; flex-direction: column; border: 4px solid; }
     .result-score-num { font-family: var(--font-numeric); font-size: 2.2rem; font-weight: 700; line-height: 1; }
     .result-score-label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2px; }
+    .result-score-explain { font-size: 0.78rem; color: var(--text-light); margin: -4px 0 12px; font-style: italic; }
     .result-profile { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 500; color: var(--navy); margin-bottom: 10px; }
     .result-desc { font-size: 0.95rem; color: var(--text-mid); line-height: 1.8; max-width: 560px; margin: 0 auto 24px; }
     .result-traits { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 32px; }
@@ -378,8 +380,9 @@
             <div class="quiz-result" id="rp-result">
               <div class="result-score-ring" id="rp-score-ring">
                 <div class="result-score-num" id="rp-score-num">—</div>
-                <div class="result-score-label">Score</div>
+                <div class="result-score-label">out of 48</div>
               </div>
+              <p class="result-score-explain" id="rp-score-explain">—</p>
               <div class="result-profile" id="rp-profile">—</div>
               <div class="result-desc" id="rp-desc">—</div>
               <div class="result-traits" id="rp-traits"></div>
@@ -773,6 +776,7 @@
     document.getElementById('rp-score-ring').style.borderColor = color;
     document.getElementById('rp-score-ring').style.color = color;
     document.getElementById('rp-score-num').textContent = total;
+    document.getElementById('rp-score-explain').textContent = 'Each of the 12 questions is scored 1–4. Your score of ' + total + '/48 places you in the ' + profile + ' category.';
     document.getElementById('rp-progress').style.width = '100%';
     document.getElementById('rp-progress-text').textContent = RP_TOTAL + ' / ' + RP_TOTAL;
     document.getElementById('rp-profile').textContent = profile;
