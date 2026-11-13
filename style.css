@@ -2213,9 +2213,15 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 500; }
 /* ─── Services grid — 3 columns now (6 cards) ─── */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
 }
+/* Row 1: cards 1-4 (4 across) · Row 2: cards 5-7 (3 across, wider) */
+.services-grid > .service-card { grid-column: span 3; min-width: 0; padding: 30px 24px; }
+.services-grid > .service-card:nth-child(n+5) { grid-column: span 4; padding: 32px 28px; }
+.services-grid > .service-card .service-title { font-size: 1.3rem; line-height: 1.25; overflow-wrap: break-word; }
+.services-grid > .service-card .service-desc,
+.services-grid > .service-card .service-features li { overflow-wrap: break-word; }
 
 /* Compliance note inside service cards */
 .service-compliance-note {
@@ -2275,9 +2281,15 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 500; }
 /* ─── Responsive updates ─── */
 @media (max-width: 1100px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid > .service-card,
+  .services-grid > .service-card:nth-child(n+5) { grid-column: auto; padding: 36px 32px; }
+  .services-grid > .service-card:last-child { grid-column: 1 / -1; }
 }
 @media (max-width: 640px) {
   .services-grid { grid-template-columns: 1fr; }
+  .services-grid > .service-card:last-child { grid-column: auto; }
+  .services-grid > .service-card,
+  .services-grid > .service-card:nth-child(n+5) { padding: 32px 26px; }
   .calc-investor-corner { flex-direction: column; text-align: center; }
 }
 
