@@ -2636,3 +2636,56 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 500; }
   90% { opacity: 0.2; }
   100% { opacity: 0; transform: translateY(-200px) translateX(50px); }
 }
+
+/* ═══════════════════════════════════════════════════════
+   AMC LOGO CAROUSEL (auto-scrolling, single row)
+═══════════════════════════════════════════════════════ */
+.partners-ticker-wrap { padding: 28px 0; }
+.amc-track {
+  display: flex;
+  width: max-content;
+  animation: amc-scroll 55s linear infinite;
+}
+@keyframes amc-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.partners-ticker-wrap:hover .amc-track { animation-play-state: paused; }
+
+.amc-logo {
+  flex: 0 0 auto;
+  width: 190px;
+  height: 88px;
+  margin: 0 10px;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid var(--cream-dark);
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(22,39,60,0.06);
+  transition: var(--transition);
+}
+.amc-logo:hover {
+  border-color: var(--azure);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(27,134,201,0.15);
+}
+.amc-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+/* If a logo file is missing, that card is hidden (so only real logos show) */
+.amc-logo .amc-name { display: none; }
+.amc-logo.no-logo { display: none; }
+
+@media (max-width: 640px) {
+  .amc-logo { width: 150px; height: 72px; padding: 10px 16px; margin: 0 8px; }
+  .amc-track { animation-duration: 45s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .amc-track { animation: none; overflow-x: auto; }
+}
